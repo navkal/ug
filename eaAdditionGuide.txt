@@ -1,0 +1,49 @@
+How to add Energize Apps website on Ubuntu 16.04
+
+- Install Anaconda Python 3.5 (accept all defaults)
+  https://www.continuum.io/downloads
+
+- Clone Github repository "ea" to directory ~/ea
+  . cd
+  . git clone https://github.com/navkal/ea.git
+
+- Link apache2 server directory to cloned repository
+  . sudo ln -s ~/ea /var/www/ea
+
+- Tell apache2 to listen on additional port
+  . sudo gedit /etc/apache2/ports.conf
+  . Add the following line below "Listen 80"
+      Listen 8080
+
+- Create virtual host configuration file for port 8080
+  . sudo gedit /etc/apache2/sites-available/ea.conf
+  . Add the following lines:
+<VirtualHost *:8080>
+  ServerAdmin webmaster@localhost
+  DocumentRoot /var/www/ea
+  SetEnv PYTHON "/home/<user>/anaconda3/bin/python"
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+- Modify PHP initialization file
+  . sudo gedit /etc/php/7.0/apache2/php.ini
+  . Change existing settings; un-comment if commented out:
+      max_execution_time=300
+      memory_limit=1024M
+      post_max_size=340M
+      upload_max_filesize=340M
+
+- Enable the new website
+  . cd /etc/apache2/sites-available
+  . sudo a2ensite ea.conf
+  . sudo service apache2 reload
+
+- Restart apache2
+  . sudo service apache2 restart
+
+- Test
+  . Open "http://localhost:8080" in your browser
+
+- Verify that website on default port still works
+  . Open "http://localhost" in your browser

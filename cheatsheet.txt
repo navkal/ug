@@ -1,0 +1,71 @@
+Access to AWS:
+
+ssh -i ~/aws/ayee.pem ubuntu@ec2-52-45-85-16.compute-1.amazonaws.com
+
+If PuTTy access fails, log into AWS console, and go to:
+. EC2
+. Security Groups
+. navkal-access (row in table)
+. Inbound
+. Edit
+. Add/remove SSH entries as needed
+. In dropdown, select "my IP"
+
+
+Update code:
+
+cd ~/ea/
+git pull origin master
+
+cd ~/common/
+git pull origin master
+
+cd ~/nn/
+git pull origin master
+
+cd ~/oops/
+git pull origin master
+
+
+
+If that fails due to dirty databases, use this:
+
+cd
+sudo rm -rf oops
+git clone https://github.com/navkal/oops.git
+
+
+Make database read-write:
+
+sudo chown www-data:www-data ~/oops/database/*
+sudo chown www-data:www-data ~/oops/database/*/database.sqlite
+sudo chown www-data:www-data ~/oops/database/*/*/images
+sudo chown www-data:www-data ~/oops/database/*/*/images/*
+
+sudo chown www-data:www-data ~/pstrial/database/*
+sudo chown www-data:www-data ~/pstrial/database/*/database.sqlite
+sudo chown www-data:www-data ~/pstrial/database/*/*/images
+sudo chown www-data:www-data ~/pstrial/database/*/*/images/*
+
+
+
+Restart apache:
+
+sudo service apache2 restart
+
+
+Cleanup:
+
+ls /tmp
+ls /var/www/ea/mda/archive/
+
+sudo rm /tmp/mda*_*.*
+
+sudo rm /var/www/ea/mda/archive/*.zip
+sudo rm /var/www/ea/mda/archive/nonicknames.csv
+
+
+Copy archive files:
+
+scp -i ~/aws/ayee.pem ubuntu@ec2-52-45-85-16.compute-1.amazonaws.com:/var/www/ea/mda/archive/*.zip ~/aws/archive/
+

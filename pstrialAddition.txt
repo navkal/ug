@@ -1,0 +1,81 @@
+How to add Panel Spy Trial website to your apache2 server running on Linux:
+(These instructions assume that you have installed Anaconda, apache2, and PHP, and set up the SMTP relay.)
+
+
+Choose a port that is not already in use on your apache2 server.  In the following example, I use 8088.
+
+
+0.  If you don't already have it, install Python 'natsort'
+
+conda install natsort
+
+
+1.  If you are replacing an existing deployment, clean it up
+
+cd
+sudo rm -rf pstrial
+
+
+2.	Unzip pstrial.zip in home directory, creating the Panel Spy Trial codebase at ~/pstrial
+
+
+3.	Create link to pstrial codebase
+
+sudo ln -s ~/pstrial /var/www/pstrial
+
+
+4. Get or update the 'common' code at /var/www/common
+
+   * If you don't have it:
+
+cd
+git clone https://github.com/navkal/common.git
+sudo ln -s ~/common /var/www/common
+
+   * If you already have it:
+
+cd ~/common/
+git pull origin master
+
+
+5. Change ownership of directories and databases
+
+sudo chown www-data:www-data ~/pstrial/database/*
+sudo chown www-data:www-data ~/pstrial/database/*/database.sqlite
+sudo chown www-data:www-data ~/pstrial/database/*/*/images
+sudo chown www-data:www-data ~/pstrial/database/*/*/images/*
+
+
+6.	Create virtual host definition file /etc/apache2/sites-available/pstrial.conf
+
+    (Note: PYTHON path might differ from example shown below.)
+
+<VirtualHost *:8088>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/pstrial
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        SetEnv PYTHON "/home/ea/anaconda3/bin/python"
+        SetEnv PANEL_SPY_ENTERPRISE "andover"
+</VirtualHost>
+
+
+7.	Add to ports file /etc/apache2/ports.conf
+
+Listen 8088
+
+
+8.	Enable website
+
+sudo a2ensite pstrial.conf
+
+
+9.  Enable mod_rewrite
+
+sudo a2enmod rewrite
+
+
+10.	Reload and restart server
+
+sudo service apache2 reload
+sudo service apache2 restart

@@ -1,0 +1,42 @@
+https://www.sslforfree.com/
+
+•	Enter URL (one of the following), and click ‘Create Free SSL Certificate’:
+  (To skip this step, log in, and click 'Renew' on URL that needs renewal.)
+
+    energizeapps.com
+    nikhilnavkal.com
+    navkal.com
+
+•	Click “Manual Verification”
+
+•	Click “Manually Verify Domain”
+
+•	Verification files
+  o	Download
+  o	Using WinSCP, upload to:
+  
+    /var/www/<dir>/.well-known/acme-challenge
+    (For alias website navkal.com, <dir> is ‘nn’)
+
+•	Verify successful upload by clicking links
+
+•	Certificate files
+  o	Click ‘Download SSL Certificate’
+  o	Click “Download All Certificate Files”
+  o	Unzip
+  o	Using WinSCP, copy to:
+
+    /tmp
+
+  o	Using PuTTY, delete old certificate files in:
+
+    /etc/apache2/ssl/<dir>
+    (For alias website navkal.com, <dir> is ‘navkal’)
+
+  o	Using PuTTY, move certificate files to:
+  
+    /etc/apache2/ssl/<dir>
+
+•	Restart apache2
+
+  sudo service apache2 restart

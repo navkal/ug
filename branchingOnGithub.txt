@@ -1,0 +1,26 @@
+Pycharm
+
+  Navigate to prompt for new branch name:
+  VCS -> Git -> Branches -> +
+
+  Enter branch name 'development' and create branch
+
+  Implement changes, push to 'development' branch
+
+
+https://github.com/navkal
+
+  Navigate to pull request prompt:
+  Repositories -> oops -> Pull requests -> New pull request
+
+  Select branches from dropdowns
+  Examine diffs
+  Click 'Create pull request'
+
+  Write short/long comments
+  Click 'Create pull request'
+
+  Assuming there are no conflicts:
+  Click 'Merge pull request'
+  Click 'Confirm merge'
+  Click 'Delete branch'

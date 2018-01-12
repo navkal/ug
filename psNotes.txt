@@ -1,0 +1,44 @@
+
+To recover Panel Spy Administrator account:
+
+. Drop a file named recoverAdmin.trg in root directory
+. Open browser to sign-in page
+. Sign in as admin/recoverAdmin
+. Change password, using 'recoverAdmin' as Old Password
+
+
+
+To create single-enterprise trial deployment:
+
+. First time only
+
+  - Create virtual host
+    * Copy existing Panel Spy virtual host
+    * Modify directory given for document root (etc.)
+    * Add environment variable specifying enterprise name:
+      SetEnv PANEL_SPY_ENTERPRISE "andover"
+
+  - Restart server
+
+
+
+. Create website source directory
+
+  - Delete www/pstrial
+
+  - Copy www/oops to www/pstrial
+
+  - Generate new database in www/pstrial
+    * Run makeTrial
+
+  - Delete in www/pstrial
+    * .git
+    * .idea
+    * spy.cdr
+    * database/andover/bancroft
+    * database/demo
+
+  - Test
+
+  - Zip pstrial to ps_2018_xx_xx.zip
+

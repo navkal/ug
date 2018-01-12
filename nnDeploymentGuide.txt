@@ -1,0 +1,45 @@
+How to deploy Nikhil Navkal website on Ubuntu 16.04
+
+- Install apache2, PHP7, ZipArchive package
+  . sudo apt-get update
+  . sudo apt-get -y install apache2
+  . sudo apt-get -y install php7.0 libapache2-mod-php7.0
+  . sudo apt-get install php7.0-zip
+
+- Clone Github repositories "nn" and "common" to ~/nn and ~/common
+  . sudo apt install git
+  . cd
+  . git clone https://github.com/navkal/common.git
+  . git clone https://github.com/navkal/nn.git
+
+- Link apache2 server directories to cloned repositories
+  . sudo ln -s ~/nn /var/www/nn
+  . sudo ln -s ~/common /var/www/common
+
+- Modify default virtual host definition 
+  . sudo gedit /etc/apache2/sites-available/000-default.conf
+  . Change DocumentRoot setting to:
+      DocumentRoot /var/www/nn
+
+- Modify PHP initialization file
+  . sudo gedit /etc/php/7.0/apache2/php.ini
+  . Change setting (and un-comment if it is commented out):
+      date.timezone=America/New_York
+
+- Create HTTP access configuration file
+  . sudo gedit /var/www/.htaccess
+  . Add the following lines (without indentation):
+      AddType application/x-httpd-php .htm .html
+      Options -Indexes
+
+- Modify /etc/apache2/apache2.conf:
+  In <Directory /var/www/> block, change
+    AllowOverride None
+  to
+    AllowOverride All
+
+- Restart apache2
+  . sudo service apache2 restart
+
+- Test
+  . Open "http://localhost" in your browser

@@ -1,0 +1,50 @@
+How to add sandbox website to your apache2 server running on Linux:
+
+
+Choose a port that is not already in use on your server.  In the following example, I use 8008.
+
+
+1.	Clone git repository in your home directory
+
+cd
+git clone https://github.com/navkal/sandbox.git
+
+
+2.	Create link to repository
+
+sudo ln -s ~/sandbox /var/www/sandbox
+
+
+3. Change ownership of directory and database
+
+sudo chown www-data:www-data ~/sandbox/cn/AHSMap.sqlite
+sudo chown www-data:www-data ~/sandbox/cn
+
+
+4.	Create virtual host definition file /etc/apache2/sites-available/sandbox.conf
+
+(Replace "XXXXX" with your username.)
+
+<VirtualHost *:8008>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/sandbox
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        SetEnv PYTHON "/home/XXXXX/anaconda3/bin/python"
+</VirtualHost>
+
+
+5.	Add to ports file /etc/apache2/ports.conf
+
+Listen 8008
+
+
+6.	Enable website
+
+sudo a2ensite sandbox.conf
+
+
+7.	Reload and restart server
+
+sudo service apache2 reload
+sudo service apache2 restart

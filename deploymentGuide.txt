@@ -1,0 +1,108 @@
+
+How to deploy Energize Apps website:
+
+- On Linux, install apache2 and PHP7.
+  . sudo apt-get update
+  . sudo apt-get -y install apache2
+  . sudo apt-get -y install php7.0 libapache2-mod-php7.0
+  . sudo service apache2 restart
+
+- On Windows, install XAMPP server.
+  https://www.apachefriends.org/download.html
+  Subsequent instructions assume installation is at "C:\xampp".
+
+- Modify settings in php.ini
+  . max_execution_time=300
+  . memory_limit=1024M
+  . post_max_size=340M
+  . upload_max_filesize=340M
+  . date.timezone=America/New_York
+
+- On Linux, set up SMTP relay
+  . In php.ini
+    * sendmail_path = "/usr/bin/msmtp -t"
+  . sudo apt-get install msmtp ca-certificates
+  . Create msmtp configuration file /etc/msmtprc (below)
+  . sudo mkdir /var/log/msmtp
+  . sudo chown -R www-data:adm /var/log/msmtp
+  . Optional: Set log rotation policy in /etc/logrotate.d/msmtp (below)
+
+- On Windows, set up SMTP relay
+  . In php.ini
+    * sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
+  . In C:\xampp\sendmail\sendmail.ini
+    * smtp_server=smtp.gmail.com
+    * smtp_port=587
+    * smtp_ssl=auto
+    * auth_username=SmtpDispatch
+    * auth_password=asdf;lkjqwerpoiu
+
+- Install Anaconda Python.
+  https://www.continuum.io/downloads
+
+- Create or choose a deployment directory <deployment path>, and create subdirectories
+  (Windows <deployment path> would typically be C:\xampp\htdocs\www, unless you configure a different path in httpd.conf)
+  . <deployment path>/ea
+  . <deployment path>/common
+
+- Clone "ea" and "common" projects from GitHub to <deployment path>/ea and <deployment path>/common
+  . sudo apt install git
+  . Instructions at:
+    https://help.github.com/articles/cloning-a-repository/
+
+- Define a virtual host with the following.  (These instructions assume that ea will use default HTTP port 80.)
+  (on Linux, in /etc/apache2/sites-available/<filename>.conf; on Windows, in httpd.conf)
+  . SetEnv PYTHON "<path to Anaconda Python executable>"
+  . DocumentRoot "<deployment path>/ea"
+
+- On Linux, install optional ZipArchive package
+  . sudo apt-get install php7.0-zip
+
+- On Linux, set ownership of archive directory
+  . sudo chown www-data:www-data /var/www/ea/mda/archive
+
+- Configure directory access rules
+  . Create file <deployment path>/.htaccess with the following lines
+      AddType application/x-httpd-php .htm .html
+      Options -Indexes
+  . On Linux, modify apache2.conf:
+    In <Directory /var/www/> block, change
+      AllowOverride None
+    to
+      AllowOverride All
+
+- Restart apache2
+  . sudo service apache2 restart
+
+
+------------
+/etc/msmtprc
+------------
+defaults
+        logfile /var/log/msmtp/general.log
+
+account SmtpDispatch
+        protocol smtp
+        host smtp.gmail.com
+        tls on
+        tls_trust_file /usr/share/ca-certificates/mozilla/Equifax_Secure_CA.crt
+        port 587
+        auth login
+        user SmtpDispatch@gmail.com
+        password asdf;lkjqwerpoiu
+        from SmtpDispatch@gmail.com
+        logfile /var/log/msmtp/SmtpDispatch.log
+
+account default: SmtpDispatch
+
+
+----------------------
+/etc/logrotate.d/msmtp
+----------------------
+/var/log/msmtp/*.log {
+rotate 12
+monthly
+compress
+missingok
+notifempty
+}
