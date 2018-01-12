@@ -24,14 +24,14 @@ To create single-enterprise trial deployment:
 
 . Create website source directory
 
-  - Delete www/pstrial
+  - Delete www/ps
 
-  - Copy www/oops to www/pstrial
+  - Copy www/oops to www/ps
 
-  - Generate new database in www/pstrial
+  - Generate new database in www/ps
     * Run makeTrial
 
-  - Delete in www/pstrial
+  - Delete in www/ps
     * .git
     * .idea
     * spy.cdr
@@ -40,5 +40,4 @@ To create single-enterprise trial deployment:
 
   - Test
 
-  - Zip pstrial to ps_2018_xx_xx.zip
-
+  - Zip ps to ps_2018_xx_xx.zip
