@@ -35,8 +35,8 @@ To create single-enterprise trial deployment:
     * .git
     * .idea
     * spy.cdr
-    * database/andover/bancroft
     * database/demo
+    * database/andover/bancroft
 
   - Test
 
