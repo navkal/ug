@@ -15,7 +15,7 @@ To create single-enterprise trial deployment:
   - Create virtual host
     * Copy existing Panel Spy virtual host
     * Modify directory given for document root (etc.)
-    * Add environment variable specifying enterprise name:
+    * Add environment variable specifying enterprise name, e.g.:
       SetEnv PANEL_SPY_ENTERPRISE "andover"
 
   - Restart server
