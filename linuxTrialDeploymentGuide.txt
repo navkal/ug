@@ -1,0 +1,109 @@
+How to deploy Energize Apps website on Ubuntu 16.04:
+
+- Install apache2, PHP7, ZipArchive package
+  . sudo apt-get update
+  . sudo apt-get -y install apache2
+  . sudo apt-get -y install php7.0 libapache2-mod-php7.0
+  . sudo apt-get install php7.0-zip
+
+  (For Ubuntu 17.10, follow instructions at https://www.linuxbabe.com/ubuntu/install-apache-mariadb-php7-1-ubuntu-17-10), summarized below:
+  . sudo apt update
+  . sudo apt upgrade
+  . sudo apt install -y apache2
+  . sudo apt install php7.1 libapache2-mod-php7.1 php7.1-mysql php-common php7.1-cli php7.1-common php7.1-json php7.1-opcache php7.1-readline
+  . sudo apt install php7.1-zip
+  . sudo a2enmod
+  . sudo systemctl restart apache2
+
+- Install Anaconda Python.
+  https://www.continuum.io/downloads
+
+- Clone "ea" and "common" repositories from GitHub to ~/ea and ~/common
+  . sudo apt install git
+  . Further instructions at:
+    https://help.github.com/articles/cloning-a-repository/
+
+- Link server directories to cloned repositories
+  . sudo ln -s ~/ea /var/www/ea
+  . sudo ln -s ~/common /var/www/common
+
+- Modify settings in /etc/php/7.0/apache2/php.ini:
+  . max_execution_time=300
+  . memory_limit=1024M
+  . post_max_size=340M
+  . upload_max_filesize=340M
+  . date.timezone=America/New_York
+
+- Modify virtual host definition in /etc/apache2/sites-available/000-default.conf
+  Change:
+  . DocumentRoot /var/www/ea
+  Add:
+  . SetEnv PYTHON "/home/<user>/anaconda3/bin/python"
+  Add (optional, to restrict upload size below post_max_size/upload_max_filesize limits set in php.ini):
+  . SetEnv metasysFile_MAX_SIZE <size> (e.g., 200M)
+  . SetEnv resultsFile_MAX_SIZE <size>
+
+- Configure directory access rules
+  . Create file /var/www/.htaccess with the following lines:
+      AddType application/x-httpd-php .htm .html
+      Options -Indexes
+  . Modify /etc/apache2/apache2.conf:
+    In <Directory /var/www/> block, change
+      AllowOverride None
+    to
+      AllowOverride All
+
+- Restart apache2
+  . sudo service apache2 restart
+
+
+ How to add stub for GIS Map website:
+
+- Create stub repository at ~/gismap
+  . cd
+  . sudo mkdir gismap
+  . Create file index.html (contents below)
+
+- Link server directory to stub repository
+  . sudo ln -s ~/gismap /var/www/gismap
+
+- Create virtual host configuration file /etc/apache2/sites-available/gismap.conf (contents below)
+
+- Modify /etc/apache2/ports.conf
+  . Add the following line below "Listen 80"
+    Listen 8080
+
+- Enable the new website
+  . cd /etc/apache2/sites-available
+  . sudo a2ensite gismap.conf
+  . sudo service apache2 reload
+
+
+-------------
+Contents of ~/gismap/index.html:
+-------------
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>GIS Map</title>
+  </head>
+  <body>
+    <h2>GIS Map</h2>
+    <p>This is a stub.</p>
+  </body>
+</html>
+-------------
+
+-------------
+Contents of /etc/apache2/sites-available/gismap.conf:
+-------------
+<VirtualHost *:8080>
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/gismap
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+-------------
+
+

@@ -12,39 +12,39 @@ conda install natsort
 
 1.  If you are replacing an existing deployment, clean it up
 
-sudo rm -rf /opt/ps
+sudo rm -rf /opt/nav/ps
 
 
-2.	Unzip ps_2018_xx_xx.zip in /opt directory, creating the Panel Spy Trial codebase at /opt/ps
+2.	Unzip ps_2018_xx_xx.zip in /opt/nav directory, creating the Panel Spy Trial codebase at /opt/nav/ps
 
-unzip ps_2018_xx_xx.zip -d /opt
+unzip ps_2018_xx_xx.zip -d /opt/nav
 
 
 3.	Create link from document root to ps codebase
 
-sudo ln -s /opt/ps /var/www/ps
+sudo ln -s /opt/nav/ps /var/www/ps
 
 
 4. Get or update the 'common' code
 
    * If you don't have it:
 
-cd /opt
+cd /opt/nav
 git clone https://github.com/navkal/common.git
-( is this needed? ) --> sudo ln -s /opt/common /var/www/common
+( is this needed? ) --> sudo ln -s /opt/nav/common /var/www/common
 
    * If you already have it:
 
-cd /opt/common/
+cd /opt/nav/common/
 git pull origin master
 
 
 5. Change ownership of directories and databases
 
-sudo chown www-data:www-data /opt/ps/database/*
-sudo chown www-data:www-data /opt/ps/database/*/database.sqlite
-sudo chown www-data:www-data /opt/ps/database/*/*/images
-sudo chown www-data:www-data /opt/ps/database/*/*/images/*
+sudo chown www-data:www-data /opt/nav/ps/database/*
+sudo chown www-data:www-data /opt/nav/ps/database/*/database.sqlite
+sudo chown www-data:www-data /opt/nav/ps/database/*/*/images
+sudo chown www-data:www-data /opt/nav/ps/database/*/*/images/*
 
 
 6.	Create virtual host definition file /etc/apache2/sites-available/ps.conf
