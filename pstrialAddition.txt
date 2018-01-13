@@ -12,47 +12,48 @@ conda install natsort
 
 1.  If you are replacing an existing deployment, clean it up
 
-cd
-sudo rm -rf pstrial
+sudo rm -rf /opt/ps
 
 
-2.	Unzip pstrial.zip in home directory, creating the Panel Spy Trial codebase at ~/pstrial
+2.	Unzip ps_2018_xx_xx.zip in /opt directory, creating the Panel Spy Trial codebase at /opt/ps
+
+unzip ps_2018_xx_xx.zip -d /opt
 
 
-3.	Create link to pstrial codebase
+3.	Create link from document root to ps codebase
 
-sudo ln -s ~/pstrial /var/www/pstrial
+sudo ln -s /opt/ps /var/www/ps
 
 
-4. Get or update the 'common' code at /var/www/common
+4. Get or update the 'common' code
 
    * If you don't have it:
 
-cd
+cd /opt
 git clone https://github.com/navkal/common.git
-sudo ln -s ~/common /var/www/common
+( is this needed? ) --> sudo ln -s /opt/common /var/www/common
 
    * If you already have it:
 
-cd ~/common/
+cd /opt/common/
 git pull origin master
 
 
 5. Change ownership of directories and databases
 
-sudo chown www-data:www-data ~/pstrial/database/*
-sudo chown www-data:www-data ~/pstrial/database/*/database.sqlite
-sudo chown www-data:www-data ~/pstrial/database/*/*/images
-sudo chown www-data:www-data ~/pstrial/database/*/*/images/*
+sudo chown www-data:www-data /opt/ps/database/*
+sudo chown www-data:www-data /opt/ps/database/*/database.sqlite
+sudo chown www-data:www-data /opt/ps/database/*/*/images
+sudo chown www-data:www-data /opt/ps/database/*/*/images/*
 
 
-6.	Create virtual host definition file /etc/apache2/sites-available/pstrial.conf
+6.	Create virtual host definition file /etc/apache2/sites-available/ps.conf
 
     (Note: PYTHON path might differ from example shown below.)
 
 <VirtualHost *:8088>
         ServerAdmin webmaster@localhost
-        DocumentRoot /var/www/pstrial
+        DocumentRoot /var/www/ps
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
         SetEnv PYTHON "/home/ea/anaconda3/bin/python"
@@ -67,7 +68,7 @@ Listen 8088
 
 8.	Enable website
 
-sudo a2ensite pstrial.conf
+sudo a2ensite ps.conf
 
 
 9.  Enable mod_rewrite
