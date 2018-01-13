@@ -73,6 +73,10 @@ sudo git clone https://github.com/navkal/ea.git
 sudo ln -s /opt/nav/ea /var/www/ea
 
 
+- Set ownership of archive directory
+sudo chown www-data:www-data /opt/nav/ea/mda/archive
+
+
 - Restart apache2
 sudo service apache2 restart
 

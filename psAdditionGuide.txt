@@ -12,41 +12,40 @@ conda install natsort
 
 1.  If you are replacing an existing deployment, clean it up
 
-cd
+cd /opt/nav
 sudo rm -rf oops
 
 
 2.	Clone git repository in your home directory
 
-cd
-git clone https://github.com/navkal/oops.git
+cd /opt/nav
+sudo git clone https://github.com/navkal/oops.git
 
 
 3.	Create link to repository
 
-sudo ln -s ~/oops /var/www/oops
+sudo ln -s /opt/nav/oops /var/www/oops
 
 
 4. Get or update the 'common' code at /var/www/common
 
    * If you don't have it:
 
-cd
-git clone https://github.com/navkal/common.git
-sudo ln -s ~/common /var/www/common
+cd /opt/nav
+sudo git clone https://github.com/navkal/common.git
 
    * If you already have it:
 
-cd ~/common/
-git pull origin master
+cd /opt/nav/common/
+sudo git pull origin master
 
 
 5. Change ownership of directories and databases
 
-sudo chown www-data:www-data ~/oops/database/*
-sudo chown www-data:www-data ~/oops/database/*/database.sqlite
-sudo chown www-data:www-data ~/oops/database/*/*/images
-sudo chown www-data:www-data ~/oops/database/*/*/images/*
+sudo chown www-data:www-data /opt/nav/oops/database/*
+sudo chown www-data:www-data /opt/nav/oops/database/*/database.sqlite
+sudo chown www-data:www-data /opt/nav/oops/database/*/*/images
+sudo chown www-data:www-data /opt/nav/oops/database/*/*/images/*
 
 
 6.	Create virtual host definition file /etc/apache2/sites-available/oops.conf

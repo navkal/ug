@@ -14,38 +14,38 @@ If PuTTy access fails, log into AWS console, and go to:
 
 Update code:
 
-cd ~/ea/
-git pull origin master
+cd /opt/nav/ea/
+sudo git pull origin master
 
-cd ~/common/
-git pull origin master
+cd /opt/nav/common/
+sudo git pull origin master
 
-cd ~/nn/
-git pull origin master
+cd /opt/nav/nn/
+sudo git pull origin master
 
-cd ~/oops/
-git pull origin master
+cd /opt/nav/oops/
+sudo git pull origin master
 
 
 
 If that fails due to dirty databases, use this:
 
-cd
+cd /opt/nav
 sudo rm -rf oops
-git clone https://github.com/navkal/oops.git
+sudo git clone https://github.com/navkal/oops.git
 
 
 Make database read-write:
 
-sudo chown www-data:www-data ~/oops/database/*
-sudo chown www-data:www-data ~/oops/database/*/database.sqlite
-sudo chown www-data:www-data ~/oops/database/*/*/images
-sudo chown www-data:www-data ~/oops/database/*/*/images/*
+sudo chown www-data:www-data /opt/nav/oops/database/*
+sudo chown www-data:www-data /opt/nav/oops/database/*/database.sqlite
+sudo chown www-data:www-data /opt/nav/oops/database/*/*/images
+sudo chown www-data:www-data /opt/nav/oops/database/*/*/images/*
 
-sudo chown www-data:www-data ~/pstrial/database/*
-sudo chown www-data:www-data ~/pstrial/database/*/database.sqlite
-sudo chown www-data:www-data ~/pstrial/database/*/*/images
-sudo chown www-data:www-data ~/pstrial/database/*/*/images/*
+sudo chown www-data:www-data /opt/nav/ps/database/*
+sudo chown www-data:www-data /opt/nav/ps/database/*/database.sqlite
+sudo chown www-data:www-data /opt/nav/ps/database/*/*/images
+sudo chown www-data:www-data /opt/nav/ps/database/*/*/images/*
 
 
 
