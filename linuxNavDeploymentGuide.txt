@@ -16,15 +16,50 @@ sudo a2enmod
 sudo systemctl restart apache2
 
 
-- Install git
-sudo apt install git
+- Modify /etc/apache2/apache2.conf:
+    In <Directory /var/www/> block, change
+      AllowOverride None
+    to
+      AllowOverride All
+
+
+- To run EnergizeApps on default HTTP port (80), modify virtual host definition in /etc/apache2/sites-available/000-default.conf
+  Change:
+  . DocumentRoot /var/www/ea
+  Add:
+  . SetEnv PYTHON "/home/<user>/anaconda3/bin/python"
+  Add (optional, to restrict upload size below post_max_size/upload_max_filesize limits set in php.ini):
+  . SetEnv metasysFile_MAX_SIZE <size> (e.g., 200M)
+  . SetEnv resultsFile_MAX_SIZE <size>
+
+
+- Modify settings in /etc/php/<php-version>/apache2/php.ini:
+max_execution_time=300
+memory_limit=1024M
+post_max_size=340M
+upload_max_filesize=340M
+date.timezone=America/New_York
+
+
+- Set up SMTP relay
+  . In php.ini
+    * sendmail_path = "/usr/bin/msmtp -t"
+sudo apt-get install msmtp ca-certificates
+  . Create msmtp configuration file /etc/msmtprc (below)
+sudo mkdir /var/log/msmtp
+sudo chown -R www-data:adm /var/log/msmtp
+  . Optional: Set log rotation policy in /etc/logrotate.d/msmtp (below)
 
 
 - Install Anaconda Python
   https://www.continuum.io/downloads
 
 
-- Create root directory for codebase
+- Install git
+sudo apt install git
+
+
+- Create deployment directory
 sudo mkdir /opt/nav
 
 
@@ -39,34 +74,42 @@ sudo ln -s /opt/nav/ea /var/www/ea
 sudo ln -s /opt/nav/common /var/www/common
 
 
-- Modify settings in /etc/php/<php-version>/apache2/php.ini:
-max_execution_time=300
-memory_limit=1024M
-post_max_size=340M
-upload_max_filesize=340M
-date.timezone=America/New_York
-
-
-- To run EnergizeApps on default HTTP port (80), modify virtual host definition in /etc/apache2/sites-available/000-default.conf
-  Change:
-  . DocumentRoot /var/www/ea
-  Add:
-  . SetEnv PYTHON "/home/<user>/anaconda3/bin/python"
-  Add (optional, to restrict upload size below post_max_size/upload_max_filesize limits set in php.ini):
-  . SetEnv metasysFile_MAX_SIZE <size> (e.g., 200M)
-  . SetEnv resultsFile_MAX_SIZE <size>
-
-
-- Configure directory access rules
-  . Create file /var/www/.htaccess with the following lines:
-      AddType application/x-httpd-php .htm .html
-      Options -Indexes
-  . Modify /etc/apache2/apache2.conf:
-    In <Directory /var/www/> block, change
-      AllowOverride None
-    to
-      AllowOverride All
-
-
 - Restart apache2
   . sudo service apache2 restart
+
+  
+  
+
+
+------------
+/etc/msmtprc
+------------
+defaults
+        logfile /var/log/msmtp/general.log
+
+account SmtpDispatch
+        protocol smtp
+        host smtp.gmail.com
+        tls on
+        tls_trust_file /usr/share/ca-certificates/mozilla/Equifax_Secure_CA.crt
+        port 587
+        auth login
+        user SmtpDispatch@gmail.com
+        password asdf;lkjqwerpoiu
+        from SmtpDispatch@gmail.com
+        logfile /var/log/msmtp/SmtpDispatch.log
+
+account default: SmtpDispatch
+
+
+----------------------
+/etc/logrotate.d/msmtp
+----------------------
+/var/log/msmtp/*.log {
+rotate 12
+monthly
+compress
+missingok
+notifempty
+}
+  
