@@ -1,0 +1,72 @@
+How to deploy Energize Apps website on Ubuntu 16.04 or 17.10:
+
+- Install apache2, PHP7, ZipArchive package
+sudo apt-get update
+sudo apt-get -y install apache2
+sudo apt-get -y install php7.0 libapache2-mod-php7.0
+sudo apt-get install php7.0-zip
+
+  (For Ubuntu 17.10, follow instructions at https://www.linuxbabe.com/ubuntu/install-apache-mariadb-php7-1-ubuntu-17-10), summarized below:
+sudo apt update
+sudo apt upgrade
+sudo apt install -y apache2
+sudo apt install php7.1 libapache2-mod-php7.1 php7.1-mysql php-common php7.1-cli php7.1-common php7.1-json php7.1-opcache php7.1-readline
+sudo apt install php7.1-zip
+sudo a2enmod
+sudo systemctl restart apache2
+
+
+- Install git
+sudo apt install git
+
+
+- Install Anaconda Python
+  https://www.continuum.io/downloads
+
+
+- Create root directory for codebase
+sudo mkdir /opt/nav
+
+
+- Clone "ea" and "common" repositories from GitHub
+cd /opt/nav
+git clone https://github.com/navkal/common.git
+git clone https://github.com/navkal/ea.git
+
+
+- Link server directories to cloned repositories
+sudo ln -s /opt/nav/ea /var/www/ea
+sudo ln -s /opt/nav/common /var/www/common
+
+
+- Modify settings in /etc/php/<php-version>/apache2/php.ini:
+max_execution_time=300
+memory_limit=1024M
+post_max_size=340M
+upload_max_filesize=340M
+date.timezone=America/New_York
+
+
+- To run EnergizeApps on default HTTP port (80), modify virtual host definition in /etc/apache2/sites-available/000-default.conf
+  Change:
+  . DocumentRoot /var/www/ea
+  Add:
+  . SetEnv PYTHON "/home/<user>/anaconda3/bin/python"
+  Add (optional, to restrict upload size below post_max_size/upload_max_filesize limits set in php.ini):
+  . SetEnv metasysFile_MAX_SIZE <size> (e.g., 200M)
+  . SetEnv resultsFile_MAX_SIZE <size>
+
+
+- Configure directory access rules
+  . Create file /var/www/.htaccess with the following lines:
+      AddType application/x-httpd-php .htm .html
+      Options -Indexes
+  . Modify /etc/apache2/apache2.conf:
+    In <Directory /var/www/> block, change
+      AllowOverride None
+    to
+      AllowOverride All
+
+
+- Restart apache2
+  . sudo service apache2 restart
