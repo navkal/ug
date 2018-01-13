@@ -34,13 +34,14 @@ cd /opt/nav
 sudo rm -rf oops
 sudo git clone https://github.com/navkal/oops.git
 
-
-Make database read-write:
-
 sudo chown www-data:www-data /opt/nav/oops/database/*
 sudo chown www-data:www-data /opt/nav/oops/database/*/database.sqlite
 sudo chown www-data:www-data /opt/nav/oops/database/*/*/images
 sudo chown www-data:www-data /opt/nav/oops/database/*/*/images/*
+
+
+
+For Panel Spy trial:
 
 sudo chown www-data:www-data /opt/nav/ps/database/*
 sudo chown www-data:www-data /opt/nav/ps/database/*/database.sqlite
