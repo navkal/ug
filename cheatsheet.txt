@@ -30,7 +30,7 @@ sudo git pull origin master
 
 If that fails due to dirty databases, use this:
 
-cd /opt/nav
+cd /opt/nav/
 sudo rm -rf oops
 sudo git clone https://github.com/navkal/oops.git
 
@@ -42,6 +42,14 @@ sudo chown www-data:www-data /opt/nav/oops/database/*/*/images/*
 
 
 For Panel Spy trial:
+
+cd <location of ps_2018_xx_xx.zip>
+
+sudo rm -rf /opt/nav/ps
+
+sudo unzip <ps_2018_xx_xx.zip> -d /opt/nav/
+
+sudo ln -s /opt/nav/ps /var/www/ps
 
 sudo chown www-data:www-data /opt/nav/ps/database/*
 sudo chown www-data:www-data /opt/nav/ps/database/*/database.sqlite
