@@ -65,17 +65,16 @@ sudo mkdir /opt/nav
 
 - Clone "ea" and "common" repositories from GitHub
 cd /opt/nav
-git clone https://github.com/navkal/common.git
-git clone https://github.com/navkal/ea.git
+sudo git clone https://github.com/navkal/common.git
+sudo git clone https://github.com/navkal/ea.git
 
 
 - Link server directories to cloned repositories
 sudo ln -s /opt/nav/ea /var/www/ea
-sudo ln -s /opt/nav/common /var/www/common
 
 
 - Restart apache2
-  . sudo service apache2 restart
+sudo service apache2 restart
 
   
   
@@ -91,7 +90,7 @@ account SmtpDispatch
         protocol smtp
         host smtp.gmail.com
         tls on
-        tls_trust_file /usr/share/ca-certificates/mozilla/Equifax_Secure_CA.crt
+        tls_trust_file /etc/ssl/certs/ca-certificates.crt
         port 587
         auth login
         user SmtpDispatch@gmail.com
