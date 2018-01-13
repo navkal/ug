@@ -76,8 +76,8 @@ sudo ln -s /opt/nav/ea /var/www/ea
 - Restart apache2
 sudo service apache2 restart
 
-  
-  
+
+
 
 
 ------------
@@ -111,4 +111,3 @@ compress
 missingok
 notifempty
 }
-  
