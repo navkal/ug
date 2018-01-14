@@ -14,10 +14,10 @@ If PuTTy access fails, log into AWS console, and go to:
 
 Update code on AWS:
 
-cd ~/ea/
+cd ~/common/
 git pull origin master
 
-cd ~/common/
+cd ~/ea/
 git pull origin master
 
 cd ~/nn/
@@ -27,10 +27,10 @@ git pull origin master
 
 Update code on linny:
 
-cd /opt/nav/ea/
+cd /opt/nav/common/
 sudo git pull origin master
 
-cd /opt/nav/common/
+cd /opt/nav/ea/
 sudo git pull origin master
 
 cd /opt/nav/nn/
