@@ -61,10 +61,10 @@ sudo ln -s /opt/nav/ps /var/www/ps
 
 
 - Change ownership of directories and databases
-sudo chown www-data:www-data /opt/nav/ps/database/*
-sudo chown www-data:www-data /opt/nav/ps/database/*/database.sqlite
-sudo chown www-data:www-data /opt/nav/ps/database/*/*/images
-sudo chown www-data:www-data /opt/nav/ps/database/*/*/images/*
+sudo chown www-data:www-data /opt/nav/ps/enterprises/*
+sudo chown www-data:www-data /opt/nav/ps/enterprises/*/database.sqlite
+sudo chown www-data:www-data /opt/nav/ps/enterprises/*/*/images
+sudo chown www-data:www-data /opt/nav/ps/enterprises/*/*/images/*
 
 
 - Reload and restart server
