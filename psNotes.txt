@@ -28,8 +28,7 @@ To create single-enterprise trial deployment:
 
   - Copy www/oops to www/ps
 
-  - Generate new database in www/ps
-    * Run makeTrial
+  - Run makeTrial to generate new database in www/ps
 
   - Delete in www/ps
     * .git
