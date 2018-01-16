@@ -47,10 +47,10 @@ cd /opt/nav/
 sudo rm -rf oops
 sudo git clone https://github.com/navkal/oops.git
 
-sudo chown www-data:www-data /opt/nav/oops/database/*
-sudo chown www-data:www-data /opt/nav/oops/database/*/database.sqlite
-sudo chown www-data:www-data /opt/nav/oops/database/*/*/images
-sudo chown www-data:www-data /opt/nav/oops/database/*/*/images/*
+sudo chown www-data:www-data /opt/nav/oops/enterprises/*
+sudo chown www-data:www-data /opt/nav/oops/enterprises/*/database.sqlite
+sudo chown www-data:www-data /opt/nav/oops/enterprises/*/*/images
+sudo chown www-data:www-data /opt/nav/oops/enterprises/*/*/images/*
 
 
 
@@ -64,10 +64,10 @@ sudo unzip <ps_2018_xx_xx.zip> -d /opt/nav/
 
 sudo ln -s /opt/nav/ps /var/www/ps
 
-sudo chown www-data:www-data /opt/nav/ps/database/*
-sudo chown www-data:www-data /opt/nav/ps/database/*/database.sqlite
-sudo chown www-data:www-data /opt/nav/ps/database/*/*/images
-sudo chown www-data:www-data /opt/nav/ps/database/*/*/images/*
+sudo chown www-data:www-data /opt/nav/ps/enterprises/*
+sudo chown www-data:www-data /opt/nav/ps/enterprises/*/database.sqlite
+sudo chown www-data:www-data /opt/nav/ps/enterprises/*/*/images
+sudo chown www-data:www-data /opt/nav/ps/enterprises/*/*/images/*
 
 
 

@@ -42,10 +42,10 @@ sudo git pull origin master
 
 5. Change ownership of directories and databases
 
-sudo chown www-data:www-data /opt/nav/oops/database/*
-sudo chown www-data:www-data /opt/nav/oops/database/*/database.sqlite
-sudo chown www-data:www-data /opt/nav/oops/database/*/*/images
-sudo chown www-data:www-data /opt/nav/oops/database/*/*/images/*
+sudo chown www-data:www-data /opt/nav/oops/enterprises/*
+sudo chown www-data:www-data /opt/nav/oops/enterprises/*/database.sqlite
+sudo chown www-data:www-data /opt/nav/oops/enterprises/*/*/images
+sudo chown www-data:www-data /opt/nav/oops/enterprises/*/*/images/*
 
 
 6.	Create virtual host definition file /etc/apache2/sites-available/oops.conf
