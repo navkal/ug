@@ -39,3 +39,22 @@ To create single-enterprise trial deployment:
   - Test
 
   - Zip ps to ps_2018_xx_xx.zip
+
+
+. Transfer to linny
+  - On Windows, copy from www/ to Mozart
+  - On Linux, drag from Mozart to desktop
+  - On Windows, open PuTTY
+  - Follow further instructions in pstrialAddition.txt
+
+      Something like the following:
+sudo rm -rf /opt/nav/ps
+sudo unzip ~/Desktop/ps<---tab---> -d /opt/nav
+sudo ln -s /opt/nav/ps /var/www/ps
+sudo chown www-data:www-data /opt/nav/ps/enterprises/*
+sudo chown www-data:www-data /opt/nav/ps/enterprises/*/database.sqlite
+sudo chown www-data:www-data /opt/nav/ps/enterprises/*/*/images
+sudo chown www-data:www-data /opt/nav/ps/enterprises/*/*/images/*
+sudo service apache2 reload
+sudo service apache2 restart
+
