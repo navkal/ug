@@ -28,6 +28,8 @@ sudo systemctl restart apache2
   . DocumentRoot /var/www/ea
   Add:
   . SetEnv PYTHON "/home/<user>/anaconda3/bin/python"
+  Add (optional, to hide navigation bar items):
+  . SetEnv NAVBAR_HIDE "about,community,contact"
   Add (optional, to restrict upload size below post_max_size/upload_max_filesize limits set in php.ini):
   . SetEnv metasysFile_MAX_SIZE <size> (e.g., 200M)
   . SetEnv resultsFile_MAX_SIZE <size>
