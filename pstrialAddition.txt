@@ -6,14 +6,14 @@ Choose a port that is not already in use on your apache2 server.  In the followi
 
 
 - Add to ports file /etc/apache2/ports.conf
-Listen 8088
+Listen 8081
 
 
 - Create virtual host definition file /etc/apache2/sites-available/ps.conf
 
     (Note: PYTHON path might differ from example shown below.)
 
-<VirtualHost *:8088>
+<VirtualHost *:8081>
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/ps
         ErrorLog ${APACHE_LOG_DIR}/error.log

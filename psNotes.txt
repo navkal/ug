@@ -21,28 +21,6 @@ To create single-enterprise trial deployment:
   - Restart server
 
 
-. Linux, first time only
-
-sudo a2enmod rewrite
-conda install natsort
-
-Add to /etc/apache2/ports.conf:
-Listen 8088
-
-Create virtual host file /etc/apache2/sites-available/ps.conf:
-<VirtualHost *:8088>
-        ServerAdmin webmaster@localhost
-        DocumentRoot /var/www/ps
-        SetEnv PYTHON "/home/energize/anaconda3/bin/python"
-        SetEnv PANEL_SPY_ENTERPRISE "andover"
-        ErrorLog ${APACHE_LOG_DIR}/error.log
-        CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
-
-Enable website:
-sudo a2ensite ps.conf
-
-
 
 . Create website source directory
 
@@ -63,20 +41,4 @@ sudo a2ensite ps.conf
   - Zip ps to ps_2018_xx_xx.zip
 
 
-. Transfer to linny
-  - On Windows, copy from www/ to Mozart
-  - On Linux, drag from Mozart to desktop
-  - On Windows, open PuTTY
-  - Follow further instructions in pstrialAddition.txt
-
-      Something like the following:
-sudo rm -rf /opt/nav/ps
-sudo unzip ~/Desktop/ps<---tab---> -d /opt/nav
-sudo ln -s /opt/nav/ps /var/www/ps
-sudo chown www-data:www-data /opt/nav/ps/enterprises/*
-sudo chown www-data:www-data /opt/nav/ps/enterprises/*/database.sqlite
-sudo chown www-data:www-data /opt/nav/ps/enterprises/*/*/images
-sudo chown www-data:www-data /opt/nav/ps/enterprises/*/*/images/*
-sudo service apache2 reload
-sudo service apache2 restart
-
+. Follow instructions in pstrialAddition.txt
