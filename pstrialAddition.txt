@@ -2,7 +2,7 @@ How to add Panel Spy Trial website to your apache2 server running on Linux:
 (These instructions assume that you have installed Anaconda, apache2, and PHP, and set up the SMTP relay.)
 
 
-Choose a port that is not already in use on your apache2 server.  In the following example, I use 8088.
+Choose a port that is not already in use on your apache2 server.  In the following example, I use 8081.
 
 
 - Add to ports file /etc/apache2/ports.conf
