@@ -6,7 +6,7 @@ To recover Panel Spy Administrator account:
 . Sign in as admin/recoverAdmin
 . Change password, using 'recoverAdmin' as Old Password
 
-
+-----------------------------------------------------------------
 
 To create single-enterprise trial deployment:
 
@@ -42,3 +42,26 @@ To create single-enterprise trial deployment:
 
 
 . Follow instructions in pstrialAddition.txt
+
+-----------------------------------------------------------------
+
+To create AWS deployment:
+
+. In makeDb
+  - Run removeAndover
+  - Run makeDemo
+  - Run makeTrial
+
+. Test
+
+. In oops
+  - Submit
+  - Push
+
+. On linny
+  - Follow cheatsheet instructions
+  - Test
+
+. On AWS
+  - Follow cheatsheet instructions
+  - Test
