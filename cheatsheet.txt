@@ -44,7 +44,7 @@ sudo chown www-data:www-data /opt/nav/oops/enterprises/*/*/images/*
 
 
 
-For Panel Spy trial:
+For Panel Spy trial deployed at AHS:
 
 cd <location of ps_2018_xx_xx.zip>
 

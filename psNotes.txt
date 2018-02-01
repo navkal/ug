@@ -50,12 +50,12 @@ To create AWS deployment:
 . In makeDb
   - Run removeAndover
   - Run makeDemo
-  - Run makeTrial
+  - Run makeEnmore
 
 . Test
 
 . In oops
-  - Submit
+  - Commit
   - Push
 
 . On linny
