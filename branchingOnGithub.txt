@@ -1,7 +1,7 @@
 Pycharm
 
   Navigate to prompt for new branch name:
-  VCS -> Git -> Branches -> +
+  VCS -> Git -> Branches... -> +
 
   Enter branch name 'development' and create branch
 
