@@ -5,7 +5,11 @@ Pycharm
 
   Enter branch name 'development' and create branch
 
-  Implement changes, push to 'development' branch
+  Implement changes
+  
+  Commit
+  
+  Push to 'development' branch (first time, branch prompt shows 'New')
 
 
 https://github.com/navkal
@@ -13,7 +17,7 @@ https://github.com/navkal
   Navigate to pull request prompt:
   Repositories -> oops -> Pull requests -> New pull request
 
-  Select branches from dropdowns
+  Select branches from dropdowns ('master' on left, 'development' on right)
   Examine diffs
   Click 'Create pull request'
 
@@ -23,4 +27,4 @@ https://github.com/navkal
   Assuming there are no conflicts:
   Click 'Merge pull request'
   Click 'Confirm merge'
-  Click 'Delete branch'
+  !!! DON'T click 'Delete branch'
