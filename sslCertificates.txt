@@ -16,6 +16,10 @@ https://www.sslforfree.com/
   o	Download
   o	Using WinSCP, upload to:
 
+    /tmp
+
+  o	Using PuTTY, move to:
+
     /var/www/<dir>/.well-known/acme-challenge
     (For alias website navkal.com, <dir> is ‘nn’)
 
@@ -23,7 +27,7 @@ https://www.sslforfree.com/
 
 •	Certificate files
   o	Click ‘Download SSL Certificate’
-  o	Click “Download All Certificate Files”
+  o	Click “Download All SSL Certificate Files”
   o	Unzip
   o	Using WinSCP, copy to:
 
