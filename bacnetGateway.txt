@@ -1,0 +1,6 @@
+To update BACnet Gateway on Linux:
+
+cd /opt/nav
+sudo rm -r bg
+sudo git clone https://github.com/navkal/bg.git
+sudo chown www-data:www-data bg
