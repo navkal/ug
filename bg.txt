@@ -1,0 +1,56 @@
+How to add BACnet Gateway service to your apache2 server running on Linux:
+(These instructions assume that you have installed Anaconda and PHP.)
+
+
+Choose a port that is not already in use on your server.  In the following example, I use 8000.
+
+
+1.  If you are replacing an existing deployment, clean it up
+
+cd /opt/nav
+sudo rm -rf bg
+
+
+2.	Clone git repository
+
+cd /opt/nav
+sudo git clone https://github.com/navkal/bg.git
+
+
+3.	Create link to repository
+
+sudo ln -s /opt/nav/bg /var/www/bg
+
+
+4. Change ownership of root directory
+
+sudo chown www-data:www-data /opt/nav/bg
+
+
+5.	Add to ports file /etc/apache2/ports.conf
+
+Listen 8000
+
+
+6.	Create virtual host definition file /etc/apache2/sites-available/bg.conf
+
+(Replace "XXXXX" with your username.)
+
+<VirtualHost *:8000>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/bg
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        SetEnv PYTHON "/home/XXXXX/anaconda3/bin/python"
+</VirtualHost>
+
+
+7.	Enable website
+
+sudo a2ensite bg.conf
+
+
+8.	Reload and restart server
+
+sudo service apache2 reload
+sudo service apache2 restart
