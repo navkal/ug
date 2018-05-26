@@ -5,6 +5,11 @@ How to add BACnet Gateway service to your apache2 server running on Linux:
 Choose a port that is not already in use on your server.  In the following example, I use 8000.
 
 
+0.  If you don't already have it, install netifaces package
+
+conda install -c conda-forge netifaces
+
+
 1.  If you are replacing an existing deployment, clean it up
 
 cd /opt/nav
