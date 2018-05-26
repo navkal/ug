@@ -19,3 +19,9 @@ exit
 
 
 http://192.168.1.169:8000/?address=10.12.0.250&type=analogInput&instance=3006238&property=presentValue
+
+http://localhost:8000/?nae=ahs&type=analogInput&instance=3006238&property=presentValue
+
+http://localhost:8000/?address=10.12.0.250&type=analogInput&instance=3006238&property=presentValue
+
+http://192.168.1.186:8000/?nae=ahs&type=analogInput&instance=3006238&property=presentValue
