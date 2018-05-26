@@ -6,22 +6,16 @@ sudo git clone https://github.com/navkal/bg.git
 sudo chown www-data:www-data bg
 
 
-TEST TEST TEST TEST TEST -->
 
-cd
-sudo rm -rf bg
-sudo git clone https://github.com/navkal/bg.git
-cd bg
+Test:
 
+cd /opt/nav/bg
+
+python br.py -a "10.12.0.250" -t analogInput -i 3006238 -p presentValue
 
 python ReadProperty.py --ini ReadProperty.ini
 read 10.12.0.250 analogInput 3006238 presentValue
 exit
-
-
-python br.py -a 10.12.0.250 -t analogInput -i 3006238 -p presentValue
-
-
 
 
 http://192.168.1.169:8000/?address=10.12.0.250&type=analogInput&instance=3006238&property=presentValue
