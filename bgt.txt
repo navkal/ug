@@ -1,0 +1,63 @@
+How to add BACnet Gateway Test website to your apache2 server running on Linux:
+(These instructions assume that you have installed Anaconda and PHP.)
+
+
+Choose a port that is not already in use on your server.  In the following example, I use 81.
+
+
+0. Get or update the 'common' code
+
+   * If you don't have it:
+
+cd /opt/nav
+sudo git clone https://github.com/navkal/common.git
+
+   * If you already have it:
+
+cd /opt/nav/common/
+sudo git pull origin master
+
+
+1.  If you are replacing an existing deployment, clean it up
+
+cd /opt/nav
+sudo rm -rf bgt
+
+
+2.	Clone git repository
+
+cd /opt/nav
+sudo git clone https://github.com/navkal/bgt.git
+
+
+3.	Create link to repository
+
+sudo ln -s /opt/nav/bgt /var/www/bgt
+
+
+4.	Add to ports file /etc/apache2/ports.conf
+
+Listen 81
+
+
+5.	Create virtual host definition file /etc/apache2/sites-available/bgt.conf
+
+(Replace "XXXXX" with your username.)
+
+<VirtualHost *:81>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/bgt
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
+6.	Enable website
+
+sudo a2ensite bgt.conf
+
+
+7.	Reload and restart server
+
+sudo service apache2 reload
+sudo service apache2 restart
