@@ -5,6 +5,11 @@ sudo rm -rf bg
 sudo git clone https://github.com/navkal/bg.git
 sudo chown www-data:www-data bg
 
+To update BACnet Gateway test demo:
+
+cd /opt/nav/bgt
+sudo git pull origin master
+
 
 
 Test:
