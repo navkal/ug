@@ -1,0 +1,30 @@
+--- Every time ---
+
+cd /opt/nav
+sudo rm -rf bgt_
+sudo cp -r bgt bgt_
+cd bgt_
+
+sudo vi test_air.csv
+[remove comments]
+
+sudo vi test_co2.csv
+[remove comments]
+
+
+--- One time ---
+
+sudo ln -s /opt/nav/bgt_ /var/www/bgt_
+
+sudo vi /etc/apache2/ports.conf
+Listen 8181
+
+cd /etc/apache2/sites-available
+sudo cp bgt.conf bgt_.conf
+sudo vi bgt_.conf
+[replace 81 with 8181]
+[replace bgt with bgt_]
+
+sudo a2ensite bgt_.conf
+sudo service apache2 reload
+sudo service apache2 restart
