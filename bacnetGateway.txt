@@ -20,6 +20,8 @@ sudo vi test_air.csv
 sudo vi test_co2.csv
 [remove comments]
 
+sudo vi navbar.csv
+[remove comments]
 
 
 
