@@ -5,23 +5,20 @@ sudo rm -rf bg
 sudo git clone https://github.com/navkal/bg.git
 sudo chown www-data:www-data bg
 
-cd /opt/nav/bgt
-sudo git pull origin master
-
+cd /opt/nav
+sudo rm -rf bgt
+sudo git clone https://github.com/navkal/bgt.git
 
 cd /opt/nav
 sudo rm -rf bgt_
 sudo cp -r bgt bgt_
 cd bgt_
 
-sudo vi test_air.csv
-[remove comments]
 
-sudo vi test_co2.csv
-[remove comments]
+
 
 sudo vi navbar.csv
-[remove comments]
+[add/remove comments]
 
 
 
