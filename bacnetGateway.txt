@@ -12,13 +12,18 @@ sudo git clone https://github.com/navkal/bgt.git
 cd /opt/nav
 sudo rm -rf bgt_
 sudo cp -r bgt bgt_
+sudo cp -r bgt_ln bgt_
 cd bgt_
-
-
 
 
 sudo vi navbar.csv
 [add/remove comments]
+
+
+
+sudo rm -rf /opt/nav/bgt_/bgt_ln
+sudo cp -r /opt/nav/bgt_ln /opt/nav/bgt_
+
 
 
 
@@ -33,4 +38,7 @@ python br.py -a "10.12.0.250" -t analogInput -i 3006238 -p presentValue
 python ReadProperty.py --ini ReadProperty.ini
 read 10.12.0.250 analogInput 3006238 presentValue
 exit
+
+
+
 
