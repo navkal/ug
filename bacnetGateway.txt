@@ -16,16 +16,16 @@ sudo cp -r bgt_ln bgt_
 cd bgt_
 
 
+
 sudo vi navbar.csv
 [add/remove comments]
 
 
 
+To update P&F exclusive links on About page:
+
 sudo rm -rf /opt/nav/bgt_/bgt_ln
 sudo cp -r /opt/nav/bgt_ln /opt/nav/bgt_
-
-
-
 
 
 
