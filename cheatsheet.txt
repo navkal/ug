@@ -30,8 +30,12 @@ cd /opt/nav/oops/
 sudo git pull origin master
 
 
+---
 
-If oops update fails due to dirty databases, use this:
+If oops update fails due to dirty databases, use one of the two methods below:
+
+
+(1) This method destroys everything and starts fresh -
 
 cd /opt/nav/
 sudo rm -rf oops
@@ -41,6 +45,14 @@ sudo chown www-data:www-data /opt/nav/oops/enterprises/*
 sudo chown www-data:www-data /opt/nav/oops/enterprises/*/database.sqlite
 sudo chown www-data:www-data /opt/nav/oops/enterprises/*/*/images
 sudo chown www-data:www-data /opt/nav/oops/enterprises/*/*/images/*
+
+
+(2) This method preserves untracked files (e.g. Metasys data files that are not under source control) -
+
+sudo git fetch --all
+sudo git reset --hard origin/master
+
+---
 
 
 

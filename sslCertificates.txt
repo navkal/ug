@@ -3,10 +3,10 @@ https://www.sslforfree.com/
 •	Enter URL (one of the following), and click ‘Create Free SSL Certificate’:
   (To skip this step, log in, and click 'Renew' on URL that needs renewal.)
 
-    panelspy.com
     energizeapps.com
     nikhilnavkal.com
     navkal.com
+    panelspy.com
 
 •	Click “Manual Verification”
 
