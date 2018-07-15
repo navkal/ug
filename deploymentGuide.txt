@@ -58,8 +58,9 @@ How to deploy Energize Apps website:
 - On Linux, install optional ZipArchive package
   . sudo apt-get install php7.0-zip
 
-- On Linux, set ownership of archive directory
+- On Linux, set ownership of archive and meters directories
   . sudo chown www-data:www-data /var/www/ea/mda/archive
+  . sudo chown www-data:www-data /var/www/ea/mda/meters
 
 - Configure directory access rules
   . Create file <deployment path>/.htaccess with the following lines
