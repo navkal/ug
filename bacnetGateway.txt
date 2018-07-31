@@ -8,6 +8,8 @@ sudo chown www-data:www-data bg
 cd /opt/nav
 sudo rm -rf bgt
 sudo git clone https://github.com/navkal/bgt.git
+sudo cp /tmp/baselines.sqlite bgt/baselines
+
 
 cd /opt/nav
 sudo rm -rf bgt_
