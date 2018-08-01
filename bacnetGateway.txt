@@ -25,6 +25,7 @@ cd bgt_
 sudo vi navbar.csv
 [add/remove comments]
 
+exit
 
 
 To update P&F exclusive links on About page:
