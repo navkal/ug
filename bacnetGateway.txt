@@ -2,7 +2,7 @@ To update BACnet Gateway and BACnet Gateway Test (bgt, bgt_) on Linux:
 
 cd /opt/nav
 sudo rm -rf bg
-Server-018100
+
 sudo git clone https://github.com/navkal/bg.git
 sudo chown www-data:www-data bg
 
