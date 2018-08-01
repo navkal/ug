@@ -10,22 +10,28 @@ cd /opt/nav
 sudo rm -rf bgt
 sudo git clone https://github.com/navkal/bgt.git
 
-cd /opt/nav/bgt/baselines
-sudo su
-/home/ea/anaconda3/bin/python ./save_history.py -b baselines.csv -h history.csv -u kWh
-
 cd /opt/nav
 sudo rm -rf bgt_
 sudo cp -r bgt bgt_
 sudo cp -r bgt_ln bgt_
 cd bgt_
 
-
-
 sudo vi navbar.csv
 [add/remove comments]
 
+
+
+
+To generate a new database from the current history file:
+
+cd /opt/nav/bgt/baselines
+sudo su
+/home/ea/anaconda3/bin/python ./save_history.py -b baselines.csv -h history.csv -u kWh
+sudo cp /opt/nav/bgt/baselines/baselines.sqlite /opt/nav/bgt_/baselines
 exit
+exit
+
+
 
 
 To update P&F exclusive links on About page:
