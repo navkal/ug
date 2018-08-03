@@ -1,4 +1,4 @@
-To update BACnet Gateway and BACnet Gateway Test (bgt, bgt_) on Linux:
+- To update BACnet Gateway and BACnet Gateway Test (bgt, bgt_) on Linux:
 
 cd /opt/nav
 sudo rm -rf bg
@@ -22,19 +22,22 @@ sudo vi navbar.csv
 
 
 
-To generate a new database from the current history file:
+- To generate a new database from the current history file:
 
 cd /opt/nav/bgt/baselines
 sudo su
-/home/ea/anaconda3/bin/python ./save_history.py -b baselines.csv -h history.csv -u kWh
-sudo cp /opt/nav/bgt/baselines/baselines.sqlite /opt/nav/bgt_/baselines
-exit
-exit
+/home/ea/anaconda3/bin/python ./save_history.py -b baselines.csv -h history.csv -u kWh -r
+
+
+- To update the database from /home/baba.csv (for example):
+
+cd /opt/nav/bgt/baselines
+sudo su
+/home/ea/anaconda3/bin/python ./save_history.py -b baselines.csv -h /home/baba.csv -u kWh
 
 
 
-
-To update P&F exclusive links on About page:
+- To update P&F exclusive links on About page:
 
 sudo rm -rf /opt/nav/bgt_/bgt_ln
 sudo cp -r /opt/nav/bgt_ln /opt/nav/bgt_
