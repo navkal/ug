@@ -2,7 +2,7 @@
 
 cd /opt/nav
 sudo rm -rf bg
-
+Server-018100
 sudo git clone https://github.com/navkal/bg.git
 sudo chown www-data:www-data bg
 
@@ -29,7 +29,7 @@ sudo su
 /home/ea/anaconda3/bin/python ./save_history.py -b baselines.csv -h history.csv -u kWh -r
 
 
-- To update the database from /home/baba.csv (for example):
+- To update the database from (for example) /home/baba.csv:
 
 cd /opt/nav/bgt/baselines
 sudo su
