@@ -16,6 +16,7 @@ sudo cp -r bgt bgt_
 sudo cp -r bgt_ln bgt_
 cd bgt_
 
+
 sudo vi navbar.csv
 [add/remove comments]
 
