@@ -21,8 +21,6 @@ sudo vi navbar.csv
 [add/remove comments]
 
 
-
-
 - To generate a new database from the current history file:
 
 cd /opt/nav/bgt/baselines
@@ -30,7 +28,7 @@ sudo su
 /home/ea/anaconda3/bin/python ./save_history.py -b baselines.csv -h history.csv -u kWh -r
 
 
-- To update the database from (for example) /home/baba.csv:
+- To update the database from history file (for example) /home/baba.csv:
 
 cd /opt/nav/bgt/baselines
 sudo su
