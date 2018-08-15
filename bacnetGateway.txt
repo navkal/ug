@@ -7,8 +7,7 @@ sudo git clone https://github.com/navkal/bg.git
 sudo chown www-data:www-data bg
 
 cd /opt/nav
-sudo rm -rf bgt
-sudo git clone https://github.com/navkal/bgt.git
+sudo git pull origin master
 
 cd /opt/nav
 sudo rm -rf bgt_
@@ -19,6 +18,30 @@ cd bgt_
 
 sudo vi navbar.csv
 [add/remove comments]
+
+
+--> NOTE on Cache Updater! -->
+--> NOTE on Cache Updater -->
+--> NOTE on Cache Updater -->
+
+- If 'git pull' operation updates update_cache.sh or update_cache.py, it PROBABLY will disrupt the cron job.
+
+  . Kill it:
+
+ps -elf | grep update_cache
+
+kill <third PID in the last>
+
+  . Delete the log
+
+cd /opt/nav/bgt_db
+ll
+
+sudo rm <update_cache_log>
+
+<-- NOTE on Cache Updater! <--
+<-- NOTE on Cache Updater! <--
+<-- NOTE on Cache Updater! <--
 
 
 - To generate a new database from the current history file:
