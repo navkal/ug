@@ -20,15 +20,20 @@ sudo vi navbar.csv
 [add/remove comments]
 
 
---> NOTE on Cache Updater! -->
---> NOTE on Cache Updater -->
---> NOTE on Cache Updater -->
+--> NOTE on Cache Loader! -->
+--> NOTE on Cache Loader -->
+--> NOTE on Cache Loader -->
 
-- If 'git pull' operation updates update_cache.sh or update_cache.py, it PROBABLY will disrupt the cron job.
+- To edit cron file:
+
+sudo crontab -e
+
+
+- If 'git pull' operation updates load_cache.sh or load_cache.py, it PROBABLY will disrupt the cron job.
 
   . Kill it:
 
-ps -elf | grep update_cache
+ps -elf | grep load_cache
 
 kill <third PID in the last>
 
@@ -37,11 +42,11 @@ kill <third PID in the last>
 cd /opt/nav/bgt_db
 ll
 
-sudo rm <update_cache_log>
+sudo rm <load_cache_log>
 
-<-- NOTE on Cache Updater! <--
-<-- NOTE on Cache Updater! <--
-<-- NOTE on Cache Updater! <--
+<-- NOTE on Cache Loader! <--
+<-- NOTE on Cache Loader! <--
+<-- NOTE on Cache Loader! <--
 
 
 - To generate a new database from the current history file:
