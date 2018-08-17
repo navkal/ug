@@ -27,8 +27,11 @@ sudo vi navbar.csv
 - To edit cron file:
 sudo crontab -e
 
-- To allow www-data to use 'sudo' without password
+- To allow www-data to use 'sudo' without password, add line to end of sudoers file
 sudo visudo
+www-data        ALL=(ALL) NOPASSWD: ALL
+
+
 
 - If 'git pull' operation updates load_cache.sh or load_cache.py, it PROBABLY will disrupt the cron job.
 
