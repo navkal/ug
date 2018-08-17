@@ -4,7 +4,6 @@ cd /opt/nav
 sudo rm -rf bg
 
 sudo git clone https://github.com/navkal/bg.git
-sudo chown www-data:www-data bg
 
 cd /opt/nav/bgt
 sudo git pull origin master
@@ -20,16 +19,17 @@ sudo vi navbar.csv
 [add/remove comments]
 
 
+- To allow www-data to use 'sudo' without password, add line to end of sudoers file
+sudo visudo
+www-data        ALL=(ALL) NOPASSWD: ALL
+
+
 --> NOTES on Cache Loader! -->
 --> NOTES on Cache Loader! -->
 --> NOTES on Cache Loader! -->
 
 - To edit cron file:
 sudo crontab -e
-
-- To allow www-data to use 'sudo' without password, add line to end of sudoers file
-sudo visudo
-www-data        ALL=(ALL) NOPASSWD: ALL
 
 
 
