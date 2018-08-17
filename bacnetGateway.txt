@@ -20,33 +20,30 @@ sudo vi navbar.csv
 [add/remove comments]
 
 
---> NOTE on Cache Loader! -->
---> NOTE on Cache Loader -->
---> NOTE on Cache Loader -->
+--> NOTES on Cache Loader! -->
+--> NOTES on Cache Loader! -->
+--> NOTES on Cache Loader! -->
 
 - To edit cron file:
-
 sudo crontab -e
 
+- To allow www-data to use 'sudo' without password
+sudo visudo
 
 - If 'git pull' operation updates load_cache.sh or load_cache.py, it PROBABLY will disrupt the cron job.
 
   . Kill it:
-
 ps -elf | grep load_cache
-
 kill <third PID in the last>
 
   . Delete the log
-
 cd /opt/nav/bgt_db
 ll
-
 sudo rm <load_cache_log>
 
-<-- NOTE on Cache Loader! <--
-<-- NOTE on Cache Loader! <--
-<-- NOTE on Cache Loader! <--
+<-- NOTES on Cache Loader! <--
+<-- NOTES on Cache Loader! <--
+<-- NOTES on Cache Loader! <--
 
 
 - To generate a new database from the current history file:
