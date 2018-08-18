@@ -31,8 +31,6 @@ www-data        ALL=(ALL) NOPASSWD: ALL
 - To edit cron file:
 sudo crontab -e
 
-
-
 - If 'git pull' operation updates load_cache.sh or load_cache.py, it PROBABLY will disrupt the cron job.
 
   . Kill it:
