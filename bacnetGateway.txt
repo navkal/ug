@@ -1,9 +1,7 @@
 - To update BACnet Gateway and BACnet Gateway Test (bgt, bgt_) on Linux:
 
 cd /opt/nav
-sudo rm -rf bg
-
-sudo git clone https://github.com/navkal/bg.git
+sudo git pull origin master
 
 cd /opt/nav/bgt
 sudo git pull origin master
@@ -25,26 +23,27 @@ www-data        ALL=(ALL) NOPASSWD: ALL
 
 
 --> NOTES on Cache Loader! -->
---> NOTES on Cache Loader! -->
---> NOTES on Cache Loader! -->
 
 - To edit cron file:
 sudo crontab -e
 
-- If 'git pull' operation updates load_cache.sh or load_cache.py, it PROBABLY will disrupt the cron job.
+- If 'git pull' operation updates cron job source files, check cron job(s) and restart if necessary:
 
-  . Kill it:
-ps -elf | grep load_cache
-kill <third PID in the last>
+  . List cron jobs
+sudo crontab -l
 
-  . Delete the log
+  . Kill:
+ps -elf | grep update_cache
+
+  . Clean up old logs
 cd /opt/nav/bgt_db
 ll
-sudo rm <load_cache_log>
+
+cd /opt/nav/bg_db
+ll
 
 <-- NOTES on Cache Loader! <--
-<-- NOTES on Cache Loader! <--
-<-- NOTES on Cache Loader! <--
+
 
 
 - To generate a new database from the current history file:
