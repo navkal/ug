@@ -1,6 +1,6 @@
 - To update BACnet Gateway and BACnet Gateway Test (bgt, bgt_) on Linux:
 
-cd /opt/nav
+cd /opt/nav/bg
 sudo git pull origin master
 
 cd /opt/nav/bgt
@@ -33,7 +33,7 @@ sudo crontab -e
 sudo crontab -l
 
   . Kill:
-ps -elf | grep update_cache
+ps -elf | grep _cache
 
   . Clean up old logs
 cd /opt/nav/bgt_db
