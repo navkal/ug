@@ -37,6 +37,13 @@ How to deploy Energize Apps website:
     * auth_username=SmtpDispatch
     * auth_password=asdf;lkjqwerpoiu
 
+NOTE!
+	Google account SmtpDispatch@gmail.com must already exist and must be configured to allow access from "less secure apps"
+	For more information, see the following:
+		https://support.google.com/accounts/answer/6010255?hl=en
+		https://myaccount.google.com/lesssecureapps
+
+
 - Install Anaconda Python.
   https://www.continuum.io/downloads
 
