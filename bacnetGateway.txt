@@ -1,5 +1,9 @@
 - To update BACnet Gateway and BACnet Gateway Test (bgt, bgt_) on Linux:
 
+sudo su
+[password]
+
+
 cd /opt/nav/common/
 sudo git pull origin master
 
