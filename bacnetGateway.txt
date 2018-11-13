@@ -17,11 +17,15 @@ cd /opt/nav
 sudo rm -rf bgt_
 sudo cp -r bgt bgt_
 sudo cp -r bgt_ln bgt_
-cd bgt_
 
 
-sudo vi navbar.csv
-[add/remove comments]
+
+
+No longer needed:
+        cd bgt_
+
+        sudo vi navbar.csv
+        [add/remove comments]
 
 
 - To allow www-data to use 'sudo' without password, add line to end of sudoers file
