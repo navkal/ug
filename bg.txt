@@ -1,33 +1,39 @@
-How to add BACnet Gateway service to your apache2 server running on Linux:
+How to add Building Energy Gateway service to your apache2 server running on Linux:
 (These instructions assume that you have installed Anaconda and PHP.)
 
 
 Choose a port that is not already in use on your server.  In the following example, I use 8000.
 
 
-0.  If you don't already have it, install netifaces package
+0.  Install PHP curl (Ubuntu only)
+
+sudo apt-get install php-curl
+sudo service apache2 restart
+
+
+1.  If you don't already have it, install netifaces package
 
 conda install -c conda-forge netifaces
 
 
-1.  If you are replacing an existing deployment, clean it up
+2.  If you are replacing an existing deployment, clean it up
 
 cd /opt/nav
 sudo rm -rf bg
 
 
-2.	Clone git repository
+3.	Clone git repository
 
 cd /opt/nav
 sudo git clone https://github.com/navkal/bg.git
 
 
-3.	Create link to repository
+4.	Create link to repository
 
 sudo ln -s /opt/nav/bg /var/www/bg
 
 
-4. Add www-data to sudoers file
+5. Add www-data to sudoers file
 
   - Open the editor
 
@@ -38,12 +44,12 @@ sudo visudo
 www-data        ALL=(ALL) NOPASSWD: ALL
 
 
-5.	Add to ports file /etc/apache2/ports.conf
+6.	Add to ports file /etc/apache2/ports.conf
 
 Listen 8000
 
 
-6.	Create virtual host definition file /etc/apache2/sites-available/bg.conf
+7.	Create virtual host definition file /etc/apache2/sites-available/bg.conf
 
 (Replace "XXXXX" with your username.)
 
@@ -56,12 +62,12 @@ Listen 8000
 </VirtualHost>
 
 
-7.	Enable website
+8.	Enable website
 
 sudo a2ensite bg.conf
 
 
-8.	Reload and restart server
+9.	Reload and restart server
 
 sudo service apache2 reload
 sudo service apache2 restart
