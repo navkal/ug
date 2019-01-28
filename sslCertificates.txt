@@ -1,5 +1,8 @@
 https://www.sslforfree.com/
 
+. (For energize.andoverma.us, un-comment 'Listen 80' in ports.conf, then restart.)
+  sudo service apache2 restart
+
 •	Enter URL (one of the following), and click ‘Create Free SSL Certificate’:
   (To skip this step, log in, and click 'Renew' on URL that needs renewal.)
 
@@ -41,6 +44,8 @@ https://www.sslforfree.com/
   o	Using PuTTY, move certificate files to:
 
     /etc/apache2/ssl/<dir>
+
+. (For energize.andoverma.us, re-comment 'Listen 80' in ports.conf.)
 
 •	Restart apache2
 
