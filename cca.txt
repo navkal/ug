@@ -1,0 +1,8 @@
+Andover CCA
+
+
+cd /opt/nav/common/
+sudo git pull origin master
+
+cd /opt/nav/cca
+sudo git pull origin master
