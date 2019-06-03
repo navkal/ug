@@ -8,3 +8,6 @@ cd /opt/nav/cca
 sudo git pull origin master
 
 sudo service apache2 restart
+
+exit
+exit
