@@ -4,6 +4,8 @@ https://aws.amazon.com/
 •	Click
 Sign In to the Console
 •	Click
+Services (top left menu item)
+•	Click
 Compute -> EC2
 •	Click
 NETWORK & SECURITY -> Security Groups

@@ -3,7 +3,7 @@ https://www.sslforfree.com/
 . (For energize.andoverma.us, un-comment 'Listen 80' in ports.conf, then restart.)
   sudo service apache2 restart
 
-•	Enter URL (one of the following), and click ‘Create Free SSL Certificate’:
+•	Enter URL (e.g. one of the following), and click ‘Create Free SSL Certificate’:
   (To skip this step, log in, and click 'Renew' on URL that needs renewal.)
 
     energizeapps.com
