@@ -1,10 +1,25 @@
 fx - File Exchange
 
-Follow instructions in psAdditionGuide.txt
+Create cache for uploads and downloads
+  /opt/toa/fx/downloads
+  /opt/toa/fx/uploads
+  sudo chown www-data:www-data /opt/toa/fx
+  sudo chown www-data:www-data /opt/toa/fx/*
 
-Figure out which port to use
-Add 'Listen' statement in ports.conf
-Create file in hosts available folder.  Define FILE_EXCHANGE_CACHE.
+Get the code
+  cd /opt/nav
+  git clone https://github.com/navkal/fx.git
+  sudo ln -s /opt/nav/fx /var/www/fx
+
+Add to ports.conf
+  Listen 8180
+
+Create .../sites-available/fx.conf
+  Define virtual host for port 8180
+  SetEnv FILE_EXCHANGE_CACHE "/opt/toa/fx"
+
 Enable virtual host
-Git clone fx
-Create fx_cache with subfolders downloads and uploads
+  cd /etc/apache2/sites-available
+  sudo a2ensite fx.conf
+  sudo service apache2 reload
+  sudo service apache2 restart
