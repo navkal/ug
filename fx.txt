@@ -1,0 +1,10 @@
+fx - File Exchange
+
+Follow instructions in psAdditionGuide.txt
+
+Figure out which port to use
+Add 'Listen' statement in ports.conf
+Create file in hosts available folder.  Define FILE_EXCHANGE_CACHE.
+Enable virtual host
+Git clone fx
+Create fx_cache with subfolders downloads and uploads
