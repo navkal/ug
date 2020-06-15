@@ -1,3 +1,74 @@
+
+https://www.sslforfree.com/
+
+. (For energize.andoverma.us, un-comment 'Listen 80' in ports.conf, then restart.)
+  sudo service apache2 restart
+
+. Go to ZeroSSL Dashboard
+
+. Click 'New Certificate' (or start renewal of old certificate some other way)
+
+. Follow steps
+
+. To verify ownership
+
+  - energize.andoverma.us
+    o	Using WinSCP, upload to:
+      /tmp
+    o	Using PuTTY, move to:
+      /var/www/<dir>/.well-known/pki-validation
+
+  - energizeapps.com, andovercca.org
+    * Sign in at https://www.namecheap.com/
+    * Find domain in table
+    * Click 'MANAGE' button
+    * Click 'Advanced DNS' tab
+    * Add or update CNAME record.  !!! NOTE: Omit trailing hostname from Host field !!!
+
+. Download Certificate
+  o	Unzip
+  o	Using WinSCP, copy to:
+    /tmp
+  o	Using PuTTY, move certificate files to:
+    /etc/apache2/ssl/<dir>
+
+. (For energize.andoverma.us, re-comment 'Listen 80' in ports.conf.)
+
+•	Restart apache2
+
+sudo service apache2 restart
+
+
+
+----------> EVERYTYHING BELOW IS DONE ------------------>
+
+Disable SSL redirect and SSL virtual host
+. navkal.com
+. nikhilnavkal.com
+. panelspy.com
+
+To disable SSL redirect:
+
+. Edit /etc/apache2/sites-available/<filename>.conf
+  Remove or comment out redirect command:
+    Redirect permanent / https://www.panelspy.com/
+
+To disable SSL virtual host:
+  sudo a2dissite <sitename>-ssl.conf
+
+. Reload/restart server
+  sudo service apache2 reload
+  sudo service apache2 restart
+
+Find out expiration dates of SSL certificates:
+https://www.ssllabs.com/
+. andovercca.org ----------> Valid until	Thu, 30 Jul 2020
+. energize.andoverma.us ------------> Valid until	Sat, 01 Aug 2020
+. energizeapps.com ------------> Valid until	Sun, 02 Aug 2020
+
+
+----------> EVERYTYHING BELOW IS OLD ------------------>
+
 https://www.sslforfree.com/
 
 . (For energize.andoverma.us, un-comment 'Listen 80' in ports.conf, then restart.)
