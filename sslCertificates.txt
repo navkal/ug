@@ -46,6 +46,8 @@ Disable SSL redirect and SSL virtual host
 . navkal.com
 . nikhilnavkal.com
 . panelspy.com
+. Added on 8/31: energizeapps.com
+  (uses 000-default.conf and default-ssl.conf)
 
 To disable SSL redirect:
 
