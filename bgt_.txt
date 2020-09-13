@@ -3,13 +3,6 @@
 cd /opt/nav
 sudo rm -rf bgt_
 sudo cp -r bgt bgt_
-cd bgt_
-
-sudo vi test_air.csv
-[remove comments]
-
-sudo vi test_co2.csv
-[remove comments]
 
 
 --- One time ---

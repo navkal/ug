@@ -1,4 +1,26 @@
 
+
+For energize.andoverma.us
+
+  - You can enable non-SSL virtual host as follows:
+    Un-comment 'Listen 80' in ports.conf
+    sudo service apache2 restart
+
+  - You can disable SSL virtual host as follows:
+    a2dissite bg-ssl.conf
+    sudo service apache2 reload
+    sudo service apache2 restart
+
+---------------------------------------------------------
+9/12/2020: andovercca.org
+Enabled non-SSL and disabled SSL virtual host as follows:
+  Comment out "Redirect permanent" command in cca.conf
+  a2dissite cca-ssl.conf
+  sudo service apache2 reload
+  sudo service apache2 restart
+---------------------------------------------------------
+
+
 https://www.sslforfree.com/
 
 . (For energize.andoverma.us, un-comment 'Listen 80' in ports.conf, then restart.)
