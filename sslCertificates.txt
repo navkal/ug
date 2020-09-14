@@ -1,12 +1,7 @@
 
-https://www.sslforfree.com/
+https://zerossl.com/
 
-ZeroSSL Accounts:
-  For BACnet Gateway -
-    zerossl01810@gmail.com
-  For Andover CCA -
-    andovercca@gmail.com
-
+See other file for account information
 
 . (For energize.andoverma.us, un-comment 'Listen 80' in ports.conf, then restart.)
   sudo service apache2 restart
