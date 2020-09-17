@@ -1,14 +1,12 @@
-
-https://zerossl.com/
-
-See other file for account information
+MANAGING SSL CERTIFICATES THE NEW WAY (using ZeroSSL):
 
 . (For energize.andoverma.us, un-comment 'Listen 80' in ports.conf, then restart.)
   sudo service apache2 restart
 
 . Go to ZeroSSL Dashboard
+  Sign in at https://www.sslforfree.com/
 
-. Click 'New Certificate' (or start renewal of old certificate some other way)
+. Click 'New Certificate' (or start renewal of Expired certificate)
 
 . Follow steps
 
@@ -20,8 +18,8 @@ See other file for account information
     o	Using PuTTY, move to:
       /var/www/<dir>/.well-known/pki-validation
 
-  - energizeapps.com, andovercca.org
-    * Sign in at https://www.namecheap.com/
+  - energizeapps.com, andovercca.org, nikhilnavkal.com, panelspy.com
+    * Sign in at https://ap.www.namecheap.com/?_ga=2.68881426.2067982009.1600273493-269146022.1600113480
     * Find domain in table
     * Click 'MANAGE' button
     * Click 'Advanced DNS' tab
@@ -41,23 +39,10 @@ See other file for account information
 sudo service apache2 restart
 
 
----------------------------------------------------------
-Managing SSL on andovercca.org:
-
-  - Enable non-SSL virtual host as follows:
-    Comment out "Redirect permanent" command in cca.conf
-    sudo service apache2 restart
-
-  - Disable SSL virtual host as follows:
-    a2dissite cca-ssl.conf
-    sudo service apache2 reload
-    sudo service apache2 restart
-
----------------------------------------------------------
 
 
 ------------------------------------------------------
-Managing SSL on energize.andoverma.us
+Managing SSL on energize.andoverma.us (hosted at ahs)
 
   - Enable non-SSL virtual host as follows:
     Un-comment 'Listen 80' in ports.conf
@@ -70,37 +55,25 @@ Managing SSL on energize.andoverma.us
 ------------------------------------------------------
 
 
-
-----------> EVERYTYHING BELOW IS DONE ------------------>
-
-Disable SSL redirect and SSL virtual host
-. navkal.com
-. nikhilnavkal.com
-. panelspy.com
-. Added on 8/31: energizeapps.com
-  (uses 000-default.conf and default-ssl.conf)
+------------------------------------------------------
+Managing SSL on other domains (hosted at aws)
 
 To disable SSL redirect:
 
 . Edit /etc/apache2/sites-available/<filename>.conf
   Remove or comment out redirect command:
     Redirect permanent / https://www.panelspy.com/
+  sudo service apache2 restart
 
 To disable SSL virtual host:
   sudo a2dissite <sitename>-ssl.conf
-
-. Reload/restart server
   sudo service apache2 reload
   sudo service apache2 restart
-
-Find out expiration dates of SSL certificates:
-https://www.ssllabs.com/
-. andovercca.org ----------> Valid until	Thu, 30 Jul 2020
-. energize.andoverma.us ------------> Valid until	Sat, 01 Aug 2020
-. energizeapps.com ------------> Valid until	Sun, 02 Aug 2020
+------------------------------------------------------
 
 
-----------> EVERYTYHING BELOW IS OLD ------------------>
+------------------------------------------------------
+MANAGING SSL CERTIFICATES THE OLD WAY (using SSL For Free):
 
 https://www.sslforfree.com/
 
