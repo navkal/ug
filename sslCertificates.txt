@@ -43,10 +43,12 @@ MANAGING SSL CERTIFICATES THE NEW WAY (using ZeroSSL):
 
 . (For energize.andoverma.us, re-comment 'Listen 80' in ports.conf.)
 
-•	Restart apache2
+. Restart apache2
 
 sudo service apache2 restart
 
+. Manually test secure access to website using several browsers.
+  (Ignore "Check Installation" button.  It doesn't seem to work at all.)
 
 
 
