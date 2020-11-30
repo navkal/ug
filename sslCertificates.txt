@@ -12,14 +12,6 @@ MANAGING SSL CERTIFICATES THE NEW WAY (using ZeroSSL):
 
 . At "Verify Domain" step:
 
-  - aws-hosted domains (energizeapps.com, andovercca.org, nikhilnavkal.com, panelspy.com)
-    *	Choose DNS (CNAME)
-    * Sign in at https://ap.www.namecheap.com/?_ga=2.68881426.2067982009.1600273493-269146022.1600113480
-    * Find domain in table
-    * Click 'MANAGE' button
-    * Click 'Advanced DNS' tab
-    * Add or update CNAME record.  !!! NOTE: Omit trailing hostname from Host field !!!
-
   - ahs-hosted domain (energize.andoverma.us)
     *	Choose HTTP File Upload
     * Follow steps
@@ -31,6 +23,14 @@ MANAGING SSL CERTIFICATES THE NEW WAY (using ZeroSSL):
           /var/www/<dir>/.well-known/pki-validation
       3. Click the test link
       4. Click "Next Step"
+
+  - aws-hosted domains (energizeapps.com, andovercca.org, nikhilnavkal.com, panelspy.com)
+    *	Choose DNS (CNAME)
+    * Sign in at https://ap.www.namecheap.com/?_ga=2.68881426.2067982009.1600273493-269146022.1600113480
+    * Find domain in table
+    * Click 'MANAGE' button
+    * Click 'Advanced DNS' tab
+    * Add or update CNAME record.  !!! NOTE: Omit trailing hostname from Host field !!!
 
 . Click "Verify Domain"
 
