@@ -1,12 +1,12 @@
 MANAGING SSL CERTIFICATES THE NEW WAY (using ZeroSSL):
 
-. (For energize.andoverma.us, un-comment 'Listen 80' in ports.conf, then restart.)
-  sudo service apache2 restart
+. (For energize.andoverma.us, un-comment 'Listen 80' in /etc/apache2/ports.conf, then restart apache.)
+sudo service apache2 restart
 
 . Go to ZeroSSL Dashboard
   Sign in at https://www.sslforfree.com/
 
-. Click 'New Certificate' (or start renewal of Expired certificate)
+. Click 'New Certificate' (or "Renew", for Expiring/Expired certificate)
 
 . Follow steps
 
@@ -31,6 +31,7 @@ MANAGING SSL CERTIFICATES THE NEW WAY (using ZeroSSL):
     * Click 'MANAGE' button
     * Click 'Advanced DNS' tab
     * Add or update CNAME record.  !!! NOTE: Omit trailing hostname from Host field !!!
+    * Click "Next Step"
 
 . Click "Verify Domain"
 
@@ -44,11 +45,10 @@ MANAGING SSL CERTIFICATES THE NEW WAY (using ZeroSSL):
 . (For energize.andoverma.us, re-comment 'Listen 80' in ports.conf.)
 
 . Restart apache2
-
 sudo service apache2 restart
 
 . Manually test secure access to website using several browsers.
-  (Ignore "Check Installation" button.  It doesn't seem to work at all.)
+  ("Check Installation" button does not always work.)
 
 
 
