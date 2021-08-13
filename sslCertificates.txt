@@ -27,15 +27,17 @@ sudo service apache2 restart
   - aws-hosted domains (energizeapps.com, andovercca.org, nikhilnavkal.com, panelspy.com)
     *	Choose DNS (CNAME)
     * Sign in at https://ap.www.namecheap.com/?_ga=2.68881426.2067982009.1600273493-269146022.1600113480
-    * Find domain in table
+    * Find domain in Domain List
     * Click 'MANAGE' button
     * Click 'Advanced DNS' tab
     * Add or update CNAME record.  !!! NOTE: Omit trailing hostname from Host field !!!
     * Click "Next Step"
 
 . Click "Verify Domain"
+  ... and wait for certificate to be generated
 
 . Download Certificate
+  o	Click 'Download Certificate (.zip)'
   o	Unzip
   o	Using WinSCP, copy files to:
     /tmp
@@ -47,9 +49,15 @@ sudo service apache2 restart
 . Restart apache2
 sudo service apache2 restart
 
+. Click 'Next Step'
+
+. Install Certificate
+  o Click 'Check Installation'  
+
 . Manually test secure access to website using several browsers.
   ("Check Installation" button does not always work.)
 
+. In navigation menu, click 'Certificates'
 
 
 ------------------------------------------------------
