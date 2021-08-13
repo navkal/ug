@@ -6,7 +6,7 @@ sudo service apache2 restart
 . Go to ZeroSSL Dashboard
   Sign in at https://www.sslforfree.com/
 
-. Click 'New Certificate' (or "Renew", for Expiring/Expired certificate)
+. Click 'New Certificate' (or 'Renew', for Expiring/Expired certificate)
 
 . Follow steps
 
