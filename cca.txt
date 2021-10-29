@@ -11,3 +11,20 @@ sudo service apache2 restart
 
 exit
 exit
+
+
+
+---------------------------
+
+Rate periods -
+  May through October
+  November through April
+
+To extend rate table -
+
+  Get latest rates from here:
+    https://www.nationalgridus.com/media/pdfs/billing-payments/electric-rates/ma/resitable.pdf
+
+  Insert latest rates here:
+    explore.php
+    g_tRatesNg
