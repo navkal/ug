@@ -2,7 +2,7 @@ To restore aws console access:
 •	Go to
 https://aws.amazon.com/
 •	Click
-Sign In to the Console
+Sign In
 •	Click
 Services (top left menu item)
 •	Click
@@ -12,12 +12,12 @@ NETWORK & SECURITY -> Security Groups
 •	Top of page: Select security group
 navkal-access
 •	Bottom of page: Select tab
-Inbound
+Inbound rules
 •	Click
-Edit
+Edit inbound rules
 •	SSH row -> Source dropdown
 Select My IP
 •	Click
-Save
+Save rules
 
 
