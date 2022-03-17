@@ -1,0 +1,31 @@
+Lawrence CCA
+
+
+cd /opt/nav/common/
+sudo git pull origin master
+
+cd /opt/nav/lcca
+sudo git pull origin master
+
+sudo service apache2 restart
+
+exit
+exit
+
+
+
+
+---------------------------
+
+Rate periods -
+  May through October
+  November through April
+
+To extend rate table -
+
+  Get latest rates from here:
+    https://www.nationalgridus.com/media/pdfs/billing-payments/electric-rates/ma/resitable.pdf
+
+  Insert latest rates here:
+    calculator.php
+    g_tRatesNg
