@@ -35,7 +35,6 @@ Events
 
 FAQ
   Rewrite steps describing process for implementing CCA
-  Remove/replace items that don't apply
   Replace Brochure download lawrence_cca.pdf
 
 Resources
