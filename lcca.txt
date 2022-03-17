@@ -1,5 +1,7 @@
 Lawrence CCA
+------------------------------
 
+To update server:
 
 cd /opt/nav/common/
 sudo git pull origin master
@@ -12,10 +14,36 @@ sudo service apache2 restart
 exit
 exit
 
+------------------------------
 
+Development notes
 
+Welcome
+  Replace dummy content
 
----------------------------
+Overview
+  Done?
+
+Basic Service
+  Done?
+
+Calculator
+  Replace sample customers
+
+Events
+  Replace dummy content
+
+FAQ
+  Rewrite steps describing process for implementing CCA
+  Remove/replace items that don't apply
+  Replace Brochure download lawrence_cca.pdf
+
+Resources
+  Done?
+
+------------------------------
+
+Maintenance notes
 
 Rate periods -
   May through October
