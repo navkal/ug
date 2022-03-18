@@ -34,11 +34,13 @@ Events
   Replace dummy content
 
 FAQ
-  Rewrite steps describing process for implementing CCA
+  Rewrite steps describing process for implementing CCA (Done?)
   Replace Brochure download lawrence_cca.pdf
 
 Resources
   Done?
+
+To export Welcome background image, use Resolution=150
 
 ------------------------------
 
