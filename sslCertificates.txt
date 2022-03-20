@@ -24,7 +24,7 @@ sudo service apache2 restart
       3. Click the test link
       4. Click "Next Step"
 
-  - aws-hosted domains (energizeapps.com, andovercca.org, nikhilnavkal.com, panelspy.com)
+  - aws-hosted domains (energizeapps.com, lawrencecca.org, nikhilnavkal.com, panelspy.com)
     *	Choose DNS (CNAME)
     * Sign in at https://ap.www.namecheap.com/?_ga=2.68881426.2067982009.1600273493-269146022.1600113480
     * Find domain in Domain List
@@ -53,7 +53,7 @@ sudo service apache2 restart
 . Click 'Next Step'
 
 . Install Certificate
-  o Click 'Check Installation'  
+  o Click 'Check Installation'
 
 . Manually test secure access to website using several browsers.
   ("Check Installation" button does not always work.)

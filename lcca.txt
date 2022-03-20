@@ -16,35 +16,47 @@ exit
 
 ------------------------------
 
-Development notes
+Development notes:
 
 Welcome
-  Replace dummy content
+  Done for now.
+  (Add Featured Announcement and other content.)
+  (Restore link to sign-up form?)
 
 Overview
-  Done?
+  Done
 
 Basic Service
-  Done?
+  Done
 
 Calculator
-  Replace sample customers
+  Done for now.
+  (Replace sample customers.)
+  (Update rate table as needed.  See notes below.)
 
 Events
-  Replace dummy content
+  Done for now.
+  (Maintain list of events.)
 
 FAQ
-  Rewrite steps describing process for implementing CCA (Done?)
-  Replace Brochure download lawrence_cca.pdf
+  Done for now.
+  (Replace download lawrence_cca.pdf and uncomment download button.)
+  (Replace lawrence_cca_trifold.pdf.)
 
 Resources
-  Done?
-
-To export Welcome background image, use Resolution=150
+  Done
 
 ------------------------------
 
-Maintenance notes
+To export images, use "Export For Web" and accept all defaults
+  favicon as png
+  brand as png
+  Welcome as jpg
+  Basic Service as jpg
+
+------------------------------
+
+Maintenance notes:
 
 Rate periods -
   May through October
