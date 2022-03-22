@@ -48,11 +48,16 @@ Resources
 
 ------------------------------
 
-To export images, use "Export For Web" and accept all defaults
-  favicon as png
-  brand as png
-  Welcome as jpg
-  Basic Service as jpg
+To export images:
+
+Use "Export For Web" and accept all defaults
+  brand.png, copy to brand.ico
+  favicon.png, copy to favicon.ico
+
+Use "Export" and save in .svg format
+  brand.svg
+  welcome.svg
+  basicservice.svg
 
 ------------------------------
 
