@@ -1,6 +1,28 @@
 Lawrence CCA
 ------------------------------
 
+Migration from Andover CCA:
+
+  On namecheap:
+    Removed CNAME Record
+      _646091b4addcb757c67e64291a8088fe
+      6A66506A6A9BD3628B7FF967176411CE.7FA856084DEF67A9024A7ABDD7D34346.1f9ba052c5de00c.comodoca.com.
+    Keep URL, which supports http only
+
+  On aws:
+    Removed cca-ssl.conf, because it needs a certificate
+      Currently renamed to cca-ssl.conf_RETIRED
+      Eventually delete this file
+    Removed .../ssl/cca certificates
+      Currently renamed to .../ssl/cca_RETIRED
+      Eventually delete this folder
+    Removed /opt/nav/cca
+      Currently renamed to /opt/nav/cca_RETIRED
+      Eventually delete this folder
+    Keep cca.conf, which redirects to https://www.lawrencecca.org
+
+------------------------------
+
 To update server:
 
 cd /opt/nav/common/
