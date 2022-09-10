@@ -14,7 +14,7 @@ sudo service apache2 restart
 
   - ahs-hosted domain (energize.andoverma.us)
     *	Choose HTTP File Upload
-    * Follow steps
+    * Follow steps in box labeled "Follow the steps below"
       1. Click "Download Auth File"
       2. Upload Auth File to server
         Using WinSCP, upload to:
@@ -30,7 +30,7 @@ sudo service apache2 restart
     * Find domain in Domain List
     * Click 'MANAGE' button
     * Click 'Advanced DNS' tab
-    * Add or update CNAME record.  !!! NOTE: Omit trailing hostname from Host field !!!
+    * Add or update Host and Value fields in CNAME record.  !!! NOTE: Omit trailing hostname from Host field !!!
     * Click "Next Step"
 
 . Click "Verify Domain"

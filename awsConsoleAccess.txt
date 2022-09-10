@@ -9,7 +9,7 @@ Services (top left menu item)
 Compute -> EC2
 •	Click
 NETWORK & SECURITY -> Security Groups
-•	Top of page: Select security group
+•	Top of page: Select security group (click checkbox)
 navkal-access
 •	Bottom of page: Select tab
 Inbound rules
