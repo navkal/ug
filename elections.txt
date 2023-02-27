@@ -1,0 +1,41 @@
+
+
+Election models
+1 Primary
+2 Local, State, Special, Town Meeting
+3 Early
+
+
+How to create new table
+
+  CREATE TABLE <new_table_name> AS SELECT <column_list> FROM <old_table_name>
+
+
+
+
+
+How we calculate Voter Engagement Score:
+
+(function calculate_voter_engagement_score() in residents.py)
+
+  (1)
+
+  As a preliminary step, generate the ElectionHistory table, which lists all elections in our records (2009-2020).  Score each election based on recency and turnout: The more recent the election, and the lower the turnout, the higher the score.
+
+  (2)
+
+  Calculate voter_engagement_score:
+
+  For each resident:
+
+  If no record of voting:
+  voter_engagement_score = 0
+
+  else:
+  max_sum = sum of election scores for all elections in which voter could have participated, based on initial residency date (guessed from assessment records) or 18th birthday, whichever is later
+
+  actual_sum = sum of scores for all elections in which voter participated
+
+  voter_engagement_score = 100 * actual_sum / max_sum
+
+
