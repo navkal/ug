@@ -1,14 +1,14 @@
 MANAGING SSL CERTIFICATES THE NEW WAY (using ZeroSSL):
 
+. Go to ZeroSSL Dashboard
+  Sign in at https://www.sslforfree.com/ or https://app.zerossl.com/login
+
 . (For energize.andoverma.us, un-comment 'Listen 80' in /etc/apache2/ports.conf, then restart apache.)
 sudo service apache2 restart
 
-. Go to ZeroSSL Dashboard
-  Sign in at https://www.sslforfree.com/
-
 . Click 'Renew' for Expiring/Expired certificate, or 'New Certificate'
 
-. Follow steps
+. Click 'Next Step' 3 times, select 'Free (Special)', and click 'Next Step'
 
 . At "Verify Domain" step:
 
@@ -37,7 +37,7 @@ sudo service apache2 restart
   (Sometimes takes a few tries with CNAME record.)
   ... and wait for certificate to be generated
 
-. Download Certificate
+. Install Certificate
   o	Click 'Download Certificate (.zip)'
   o	Unzip
   o	Using WinSCP, copy files to:
@@ -45,14 +45,17 @@ sudo service apache2 restart
   o	Using PuTTY, move certificate files to:
     /etc/apache2/ssl/<dir>
 
-. (For energize.andoverma.us, re-comment 'Listen 80' in ports.conf.)
+cd <dir>
+mv /tmp/ca_bundle.crt .
+mv /tmp/certificate.crt .
+mv /tmp/private.key .
 
-. Restart apache2
+  o (For energize.andoverma.us, re-comment 'Listen 80' in ports.conf.)
+
+  o Restart apache2
 sudo service apache2 restart
 
-. Click 'Next Step'
-
-. Install Certificate
+  o Click 'Next Step'
   o Click 'Check Installation'
 
 . Manually test secure access to website using several browsers.
