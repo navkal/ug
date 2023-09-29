@@ -1,5 +1,10 @@
 Andover CCA
 
+-----------------------------------------------
+OBSOLETE.  DO NOT USE FOR LAWRENCE CCA WEBSITE!
+-----------------------------------------------
+
+
 
 cd /opt/nav/common/
 sudo git pull origin master
