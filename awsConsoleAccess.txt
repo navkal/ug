@@ -7,7 +7,7 @@ https://aws.amazon.com/
 Sign In
 
 •	Click
-Services (top left menu item)
+Services (top left corner)
 
 •	Click
 Compute -> EC2
