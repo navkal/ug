@@ -49,6 +49,7 @@ cd <dir>
 mv /tmp/ca_bundle.crt .
 mv /tmp/certificate.crt .
 mv /tmp/private.key .
+ll
 
   o (For energize.andoverma.us, re-comment 'Listen 80' in ports.conf.)
 
