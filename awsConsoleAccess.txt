@@ -13,7 +13,7 @@ Services (top left corner)
 Compute -> EC2
 
 •	Click
-NETWORK & SECURITY -> Security Groups
+Network & Security -> Security Groups
 
 •	Top of page: Select security group (click checkbox)
 navkal-access
