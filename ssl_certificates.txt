@@ -24,7 +24,7 @@ sudo service apache2 restart
       3. Click the test link
       4. Click "Next Step"
 
-  - aws-hosted domains (energizeapps.com, lawrencecca.org, nikhilnavkal.com, panelspy.com)
+  - aws-hosted domains (energizeapps.com, lawrencecca.org, nikhilnavkal.com, NOT panelspy.com because we don't have an SSL certificate for it)
     *	Choose DNS (CNAME)
     * Sign in at https://ap.www.namecheap.com/?_ga=2.68881426.2067982009.1600273493-269146022.1600113480
     * Find domain in Domain List
