@@ -8,7 +8,11 @@ sudo service apache2 restart
 
 . Click 'Renew' for Expiring/Expired certificate, or 'New Certificate'
 
-. Click 'Next Step' 3 times, select 'Free (Special)', and click 'Next Step'
+. Click 'Next Step'
+
+. Select '1-Year Certificate'
+
+. Click 'Next Step' 2 times, select 'Basic', and click 'Next Step'
 
 . At "Verify Domain" step:
 
@@ -24,7 +28,7 @@ sudo service apache2 restart
       3. Click the test link
       4. Click "Next Step"
 
-  - aws-hosted domains (energizeapps.com, lawrencecca.org, nikhilnavkal.com, NOT panelspy.com because we don't have an SSL certificate for it)
+  - aws-hosted domains (energizeapps.com, lawrencecca.org, nikhilnavkal.com)
     *	Choose DNS (CNAME)
     * Sign in at https://ap.www.namecheap.com/?_ga=2.68881426.2067982009.1600273493-269146022.1600113480
     * Find domain in Domain List
@@ -86,7 +90,7 @@ To disable SSL redirect:
 
 . Edit /etc/apache2/sites-available/<filename>.conf
   Remove or comment out redirect command:
-    Redirect permanent / https://www.panelspy.com/
+    Redirect permanent / https://www.<domain>.com/
   sudo service apache2 restart
 
 To disable SSL virtual host:
