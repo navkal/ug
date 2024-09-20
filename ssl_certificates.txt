@@ -49,10 +49,12 @@ sudo service apache2 restart
   o	Using PuTTY, move certificate files to:
     /etc/apache2/ssl/<dir>
 
-cd <dir>
-mv /tmp/ca_bundle.crt .
-mv /tmp/certificate.crt .
-mv /tmp/private.key .
+cd /etc/apache2/ssl/<dir>
+ll
+
+sudo mv /tmp/ca_bundle.crt .
+sudo mv /tmp/certificate.crt .
+sudo mv /tmp/private.key .
 ll
 
   o (For energize.andoverma.us, re-comment 'Listen 80' in ports.conf.)

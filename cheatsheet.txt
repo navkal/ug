@@ -80,11 +80,10 @@ sudo service apache2 restart
 
 Cleanup:
 
-ls /tmp
-ls /var/www/ea/mda/archive/
-
+ls /tmp/mda*_*.*
 sudo rm /tmp/mda*_*.*
 
+ls /var/www/ea/mda/archive/
 sudo rm /var/www/ea/mda/archive/*.zip
 sudo rm /var/www/ea/mda/archive/nonicknames.csv
 
