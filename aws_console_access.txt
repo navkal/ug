@@ -6,6 +6,9 @@ https://aws.amazon.com/
 •	Click
 Sign In
 
+•	Sign in as Root User
+navkal@hotmail.com
+
 •	Click
 Services (top left corner)
 
