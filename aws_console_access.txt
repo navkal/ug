@@ -4,13 +4,13 @@ To restore aws console access:
 https://aws.amazon.com/
 
 •	Click
-Sign In
+Sign in to console
 
 •	Sign in as Root User
 navkal@hotmail.com
 
 •	Click
-Services (top left corner)
+View all Services
 
 •	Click
 Compute -> EC2
