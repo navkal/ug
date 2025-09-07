@@ -72,6 +72,14 @@ sudo chown www-data:www-data /opt/nav/ps/enterprises/*/*/images
 sudo chown www-data:www-data /opt/nav/ps/enterprises/*/*/images/*
 
 
+Clean up apache2 logs:
+
+ls -l /var/log/apache2
+sudo rm /var/log/apache2/*
+ls -l /var/log/apache2
+
+sudo service apache2 restart
+
 
 Restart apache:
 

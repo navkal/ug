@@ -12,7 +12,7 @@ sudo service apache2 restart
 
 . Select '1-Year Certificate'
 
-. Click 'Next Step' 2 times, select 'Basic', and click 'Next Step'
+. Click 'Next Step' 3 times, select 'Basic', and click 'Next Step'
 
 . At "Verify Domain" step:
 
@@ -42,7 +42,7 @@ sudo service apache2 restart
   ... and wait for certificate to be generated
 
 . Install Certificate
-  o	Click 'Download Certificate (.zip)'
+  o	Click button 'Download Certificate (.zip)'
   o	Unzip
   o	Using WinSCP, copy files to:
     /tmp
