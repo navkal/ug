@@ -1,0 +1,23 @@
+Change Sleep Settings:
+
+Plugged in: Make my device sleep after Never
+
+
+Run scripts:
+
+1. refresh lawrence
+    (quarterly, create lawrence brief)
+2. _publish
+3. lawrence_parcels
+4. lawrence
+5. compare_scrapes 2023-10-18
+
+
+Restore Sleep Settings:
+
+Plugged in: Make my device sleep after 30 minutes
+
+Copy db:
+\\handel\ToA\Data
+
+
