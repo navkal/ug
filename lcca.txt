@@ -25,6 +25,38 @@ sudo service apache2 restart
 
 ------------------------------
 
+Maintenance notes:
+
+National Grid - semi-annual changes every January and July
+
+(July 2026 next)
+
+Get latest rates here:
+https://www.nationalgridus.com/media/pdfs/billing-payments/electric-rates/ma/resitable.pdf
+
+Insert latest rates here:
+  calculator.php
+  g_tRatesNg
+
+
+Other important reminders!
+
+Expiring in 11/2026:
+  Haverhill
+  Tyngsboro
+  Expiring in 12/2026:
+  Acton
+  Lexington
+  Tewksbury
+  Watertown
+
+http://localhost:8180/?page=calculator
+
+https://www.lawrencecca.org/?page=calculator
+
+
+------------------------------
+
 Development notes:
 
 Welcome
@@ -67,23 +99,6 @@ Use "Export" and save in .svg format
   brand.svg
   welcome.svg
   basicservice.svg
-
-------------------------------
-
-Maintenance notes:
-
-Rate periods -
-  May through October
-  November through April
-
-To extend rate table -
-
-  Get latest rates from here:
-    https://www.nationalgridus.com/media/pdfs/billing-payments/electric-rates/ma/resitable.pdf
-
-  Insert latest rates here:
-    calculator.php
-    g_tRatesNg
 
 ------------------------------
 
